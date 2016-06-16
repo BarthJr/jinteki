@@ -1,0 +1,113 @@
+/*
+  Autores:João Moacir Barth Junior
+      Alan Palomero Machado
+      Cynthia Rocha Oliveira
+*/
+.navbar-brand {
+	margin-left: 0;
+}
+
+.up {
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+.risco {
+	margin-top: -15px;
+	border-top: 6px solid #49201a;
+	width: 100%;
+}
+
+
+.top-name {
+	margin-top: 15px;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+li, ul {
+	display: inline;
+	margin-left: 20px;
+}
+
+.direita {
+	float: right;
+	margin-top: 15px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+	font-weight: lighter;
+	font-size: 0.9em;
+}
+
+a:hover {
+	color: black;
+}
+
+.icon {
+	width: 30px;
+	margin-top: -3px;
+	margin-left: -9px;
+}
+
+.active {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.meio {
+	margin: 0 55px;
+	padding: 0 15px;
+	border: 2px solid #bfbfbf;
+	-webkit-box-shadow: 1px 14px 17px -8px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 14px 17px -8px rgba(0,0,0,0.75);
+	box-shadow: 1px 14px 17px -8px rgba(0,0,0,0.75);
+}
+
+.titulo {
+	padding: 0 15px;
+}
+
+.botao {
+  padding: 4px;
+  background-color: #49201a;
+  border-radius: 0px;
+  font-family: 'Passion One', cursive;
+  letter-spacing: 1px;
+  min-width: 60px;
+  color: white;
+  padding: 5px 19px;
+}
+
+.botao-branco {
+    background-color: white; /* Green */
+    border: none;
+    color: red;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+th {
+	text-align: center;
+	background-color: #49201a;
+	color: white;
+	font-family: 'Passion One', cursive;
+}
+
+td {
+	text-align: center;
+}
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #f2f2f2;
+}
+
+.sobe {
+	position: relative;
+	bottom: 2px;
+}
