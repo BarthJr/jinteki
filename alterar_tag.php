@@ -32,26 +32,8 @@
 </head>
 
 <body>
-	<div class="container topo">
-		<div class="col-md-12 up">
-			<img class="navbar-brand" src="logo2.jpg" />
-			<p class="top-name">Jinteki</p>
-			<ul  class="direita">
-				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="clientes.html"">Clientes</a></li>
-				<li><a href="apartamento.html">Apartamentos</a></li>
-				<li><a href="#">Relatórios</a></li>
-				<li><a href="#">Pendências</a></li>
-				<li><a href="movimentacao.html">Movimentação</a></li>
-				<li><a href="#"><img class="icon" src="profile.png" /></a></li>
-				<li><a href="#"><img class="icon" src="sino.jpg" /></a></li>
-				<li><a href="#"><img class="icon" src="sair.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<br />
 
-	<div class="risco"></div>
+	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 <?php ValidateFormUpdateAp(); ?>
 <form action="" method="post">
