@@ -9,6 +9,22 @@
 	Init(); 
 
 
+	//Busca na pagina de acordo com os campos digitados
+	function Buscar(){
+		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
+		if(GetPost('send')){
+			$t=GetPost('tag');
+			$nmMorador=GetPost('nome-cliente');
+			$numAP=GetPost('apartamento');
+
+			$query.= ($t) ? " AND NumTAG = '$t'" : '';
+			$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
+			$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
+		}
+		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
+		return $data;
+
+	}
 	function Update(){
 		if(GetPost('send')){
 			$key = UserLog();
