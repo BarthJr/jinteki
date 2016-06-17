@@ -12,7 +12,7 @@
 	//$nmMorador='Junior Barth';
 	//$numAP="A002";
 
-	$key= $_GET['userkey'];
+	
 	//var_dump($key);
 	//$query.="WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND m.Nome = 'Junior Barth'";
 	

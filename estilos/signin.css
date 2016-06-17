@@ -114,6 +114,10 @@ li {
   padding-bottom: 18px;
 }
 
+.btn {
+  color: white;
+}
+
 .center {
   text-align: center;
 }

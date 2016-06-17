@@ -31,26 +31,8 @@
 </head>
 
 <body>
-	<div class="container topo">
-		<div class="col-md-12 up">
-			<img class="navbar-brand" src="imagens/logo2.jpg" />
-			<p class="top-name">Jinteki</p>
-			<ul  class="direita">
-				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="clientes.php"">Clientes</a></li>
-				<li><a href="apartamentos.php">Apartamentos</a></li>
-				<li><a href="#">Relatórios</a></li>
-				<li><a href="#">Pendências</a></li>
-				<li><a href="movimentacoes.php">Movimentação</a></li>
-				<li><a href="#"><img class="icon" src="profile.png" /></a></li>
-				<li><a href="#"><img class="icon" src="sino.jpg" /></a></li>
-				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<br />
 
-	<div class="risco"></div>
+	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 	<div class="container">
 
@@ -84,7 +66,12 @@
 				            <div class="controls"> 
 				                <form role="form" autocomplete="off">
 				                    <div class="entry input-group col-xs-3">
-				                        <input class="form-control campoTag" name="fields[]" type="text" placeholder="Adicionar TAG" />
+				                        	
+
+				                        <select>
+				                        	<option class="form-control " name="fields[]" value="PEGA DO BANCO">PEGA DO BANCO</option>
+				                        </select>
+
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
 				                                <span class="glyphicon glyphicon-plus"></span>
