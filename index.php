@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="estilos/bootstrap.min.css" />
   <script src="scripts/jquery.min.js"></script>
   <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/jquery.maskedinput.min.js"></script>
   <script src="center.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Passion+One:400,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="estilos/signin.css" />
@@ -66,8 +67,8 @@
 		<form class="form-signin">
 			<div class="nome">
 		        <h2 class="form-signin-heading">Login</h2>
-		        <label for="inputTag" class="sr-only">TAG</label>
-		        <input type="text" id="inputTag" class="form-control" placeholder="TAG" required="" autofocus="">
+		        <label for="inputTag" class="sr-only ">TAG</label>
+		        <input type="text" id="inputTag" class="form-control campoTag" placeholder="TAG" required="" autofocus="">
 		        <label for="inputPassword" class="sr-only">SENHA</label>
 		        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
 
@@ -100,7 +101,12 @@
    		</div>
    	</div>
   </div>
+<script>
+jQuery(function($){
+       $(".campoTag").mask("999.999.999");
+});
 
+</script>
 
 
 </body>
