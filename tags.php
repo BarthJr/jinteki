@@ -8,7 +8,7 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
 
-	//$t="333333333";
+	//$t="222222222";
 	//$nmMorador='Junior Barth';
 	//$numAP="A002";
 
