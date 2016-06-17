@@ -8,9 +8,9 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
 
-	$t="123456789";
-	$nmMorador='Junior Barth';
-	$numAP="A002";
+	//$t="123456789";
+	//$nmMorador='Junior Barth';
+	//$numAP="A002";
 
 	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
 	$query.= ($t) ? " AND NumTAG = '$t'" : '';

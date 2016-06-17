@@ -51,8 +51,8 @@
 	</div>
 	<br />
 
-
-	<form action="" method="post" name="">
+	<?php ValidateFormTag();?>
+	<form action="criar_tag.php" method="post" id="alg">
 	<div class="risco"></div>
 
 	<div class="container">
@@ -62,52 +62,30 @@
 		<div class="meio">
 
 			<div class="titulo-detalhes">Número da TAG: </div> 
-				<input class="w3-input inline" id="numeroTAG" style="width:110px; text-align:center" type="text" name="telefone1">
+				<input class="w3-input inline" id="numeroTAG" style="width:110px; text-align:center" type="text" name="nm_tag">
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Situação: </div> 
-			<select class="inline">
+			<select name="active" class="inline">
 			  <option value=""></option>
 			  <option value="1">Ativo</option>
 			  <option value="0">Inativo</option>
 			</select>
 			<br /><br />
-			<div class="titulo-detalhes">Apartamento: </div> 
-			<select name= "Ap" class="inline">
-			<option value=""></option>
-			<?php
-			  $dataAP=DBRead('Apartamento as a','','a.CodAp,a.NomeAp');
-			  foreach ($dataAP as $res) {
-
-			?>
-			  <option value="echo $res['CodAp']"><?php echo $res['NomeAp'];?></option>
-			  <!--<option value=""></option>
-			  <option value="A102">A102</option>
-			  <option value="A103">A103</option>
-			  <option value="A104">A104</option> -->
-			<?php
-				}
-			?> 
-			</select>
-			<br /><br />
+			
 			<div class="titulo-detalhes">Morador: </div> 
-			<select class="inline">
+			<select name="cod_morador" class="inline">
 			<option value=""></option>
 			<?php
 				$dataM=DBRead('Morador as m','','m.CodMorador,m.Nome');
 				var_dump($dataM);
-			  	foreach ($dataM as $res) {
-
-			  ?>
-			  <option value="echo $res['CodMorador']"><?php echo $res['Nome'];?></option>
-			  
-			<?php
-				}
-			?>  
+			  	foreach ($dataM as $res) : ?>
+			  		<option value="<?php echo $res['CodMorador'] ?> "><?php echo $res['Nome'];?></option>
+			<?php endForEach; ?>  
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Permissão de acesso: </div> 
-			<select class="inline">
+			<select name="HrAcess" class="inline">
 			  <option value=""></option>
 			  <option value="A102">Todos os horários</option>
 			  <option value="A103">Horário comercial</option>
@@ -115,14 +93,14 @@
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Permissões: </div> 
-			<select class="inline">
+			<select name="perm" class="inline">
 			  <option value=""></option>
 			  <option value="1">Morador</option>
 			  <option value="2">Administrador do apartamento</option>
 			  <option value="3">Administrador do sistema</option>
 			</select>
 			<br /><br />
-			  <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;"></FORM>
+			  <INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;">
 			  <a type="button" class="botao" data-toggle="modal" data-target="#modalCriar">Criar</a>
 		</div>
 	</div>
@@ -140,12 +118,13 @@
 	        <div class="modal-body">
 	          <p class="vertical-center">Salvar o novo registro no banco de dados?</p>
 	          <button type="button" class="btn btn-default left-2" data-dismiss="modal">Cancelar</button>
-	          <button class="btn btn-default right-2" type="submit" data-dismiss="modal">Salvar</button>
+	          <input class="btn btn-default right-2" type="submit" form="alg" name="send" value="Salvar"></input>
 	        </div>
 	      </div>      
    		</div>
    	</div>
   </div>
+  </form>
 <script>
 jQuery(function($){
        $("#numeroTAG").mask("999.999.999");

@@ -53,7 +53,7 @@
 
 	<div class="risco"></div>
 
-<?php ValidateFormUpdateAp(); ?>
+
 <form action="" method="post">
 	<div class="container">
 
@@ -61,7 +61,7 @@
 
 		<div class="meio">
 			<div class="titulo-detalhes">Situação: </div> 
-			<select class="inline">
+			<select name="estado" class="inline">
 			  <option value="1"
 			  	<?php if($dataAux['Estado']==1)
 			  		echo "selected='selected'";
@@ -127,7 +127,7 @@
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Permissões: </div> 
-			<select class="inline">
+			<select name="perm" class="inline">
 			  <option value="1"
 			  	<?php if($dataAux['CodPermissao']==1)
 			  		echo "selected='selected'";
