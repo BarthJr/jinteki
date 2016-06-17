@@ -53,8 +53,8 @@
         <li><a class="menu-item" id="ctrl">Controle de Acesso</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" id="fcnsc">Fale Conosco</a></li>
-		<li><a href="#" id="cdst">Cadastro</a></li>
+        <li><a href="fale conosco.php" id="fcnsc">Fale Conosco</a></li>
+		<li><a href="cadastro.php" id="cdst">Cadastro</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -75,7 +75,7 @@
 		        <a class="btn btn-lg btn-primary btn-block" id="branco" href="movimentacoes.php" type="submit">Entrar</a>
 		    	
 		    	<a type="button" class="left" data-toggle="modal" data-target="#modalSenha">Esqueceu sua senha?</a>
-		    	<a class="right" href="#">CADASTRE-SE</a>
+		    	<a class="right" href="cadastro.php">CADASTRE-SE</a>
 		    </div>
 		</form>
 

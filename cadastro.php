@@ -76,7 +76,7 @@
         <br><br>
 
         <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;"></FORM>
-        <a class="btn btn-lg btn-primary botao" id="branco" href="movimentacoes.php" type="submit">Enviar</a>
+        <button class="btn btn-lg btn-primary botao" id="branco" type="submit">Enviar</button>
       </form>
 
     </div>
