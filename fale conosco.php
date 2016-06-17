@@ -50,47 +50,15 @@
 
   <div class="container">
     <div class="meio">
-      
-      <div class="titulo-detalhes">Nome Completo*: </div> 
-        <input class="w3-input inline" style="width:280px"  type="text" name= "nome" id="nomeCompleto" value="" required>
-      <br />
+      <br><br>
+      <div class="titulo-detalhes">contato@jinteki.com</div> <br>
+      <div class="titulo-detalhes">(41) 3349-5678</div><br>
+      <div class="titulo-detalhes">facebook.com/residencialJinteki</div><br><br>
 
-      <div class="titulo-detalhes">Telefone 1*: </div> 
-        <input class="w3-input inline campoTelefone" style="width:130px" type="text" name="telefone1" value="" required>
-      <br />
-
-      <div class="titulo-detalhes">Telefone 2: </div> 
-        <input class="w3-input inline campoTelefone" style="width:130px" type="text" name= "telefone2" value="">
-      <br />
-
-      <div class="titulo-detalhes">Email*: </div> 
-        <input class="w3-input inline" style="width:230px" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="" required>
-      <br />
-
-      <div class="titulo-detalhes">RG*: </div> 
-        <input class="w3-input inline" style="width:110px"  type="text" name= "rg" id="RG" value="" required>
-      <br />
-
-      <div class="titulo-detalhes">CPF*: </div> 
-        <input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="" required>
-        <br><br>
-
-        
-      </form>
-      <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;" /></FORM>
-        <button class="btn btn-lg btn-primary botao" id="branco" type="submit">Enviar</button>
 
     </div>
   </div>
 
 
-<script>
-jQuery(function($){
-       $(".campoTelefone").mask("(99) 9999-9999");
-       $("#CPF").mask("999.999.999-99");
-       $(".campoTag").mask("999.999.999");
-       $("#RG").mask("***********");
-});
-</script>
 
 </body>
