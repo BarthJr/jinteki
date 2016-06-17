@@ -25,36 +25,21 @@
 	<title>Jinteki - Detalhes</title>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="signin.css" />
+  <link rel="stylesheet" href="estilos/w3.css">
+  <link rel="stylesheet" href="estilos/bootstrap.min.css" />
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/center.js"></script>
+  <script src="scripts/jquery.maskedinput.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="estilos/signin.css" />
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
+  <link rel="stylesheet" href="estilos/pendencias.css" /> 
 </head>
 
 <body>
-	<div class="container topo">
-		<div class="col-md-12 up">
-			<img class="navbar-brand" src="imagens/logo2.jpg" />
-			<p class="top-name">Jinteki</p>
-			<ul  class="direita">
-				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="clientes.php"">Clientes</a></li>
-				<li><a href="apartamentos.php">Apartamentos</a></li>
-				<li><a href="#">Relatórios</a></li>
-				<li><a href="#">Pendências</a></li>
-				<li><a href="movimentacoes.php">Movimentação</a></li>
-				<li><a href="#"><img class="icon" src="profile.png" /></a></li>
-				<li><a href="#"><img class="icon" src="sino.jpg" /></a></li>
-				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<br />
 
-	<div class="risco"></div>
+	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 	<div class="container">
 		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a href="tags.php">Tags</a>><a class="active"><?php echo $key?></a></h3>

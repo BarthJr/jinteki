@@ -12,7 +12,7 @@
 	//$nmMorador='Junior Barth';
 	//$numAP="A002";
 
-	$key= $_GET['userkey'];
+	
 	//var_dump($key);
 	//$query.="WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND m.Nome = 'Junior Barth'";
 	
@@ -23,9 +23,10 @@
   <title>Jinteki</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="estilos/bootstrap.min.css" />
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/jquery.maskedinput.min.js"></script>
   <script src="center.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Passion+One:400,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="estilos/signin.css" />
@@ -52,8 +53,8 @@
         <li><a class="menu-item" id="ctrl">Controle de Acesso</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" id="fcnsc">Fale Conosco</a></li>
-		<li><a href="#" id="cdst">Cadastro</a></li>
+        <li><a href="fale conosco.php" id="fcnsc">Fale Conosco</a></li>
+		<li><a href="cadastro.php" id="cdst">Cadastro</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -66,15 +67,15 @@
 		<form class="form-signin">
 			<div class="nome">
 		        <h2 class="form-signin-heading">Login</h2>
-		        <label for="inputTag" class="sr-only">TAG</label>
-		        <input type="text" id="inputTag" class="form-control" placeholder="TAG" required="" autofocus="">
+		        <label for="inputTag" class="sr-only ">TAG</label>
+		        <input type="text" id="inputTag" class="form-control campoTag" placeholder="TAG" required="" autofocus="">
 		        <label for="inputPassword" class="sr-only">SENHA</label>
 		        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
 
-		        <a class="btn btn-lg btn-primary btn-block" href="movimentacoes.php" type="submit">Entrar</a>
+		        <a class="btn btn-lg btn-primary btn-block" id="branco" href="movimentacoes.php" type="submit">Entrar</a>
 		    	
 		    	<a type="button" class="left" data-toggle="modal" data-target="#modalSenha">Esqueceu sua senha?</a>
-		    	<a class="right" href="#">CADASTRE-SE</a>
+		    	<a class="right" href="cadastro.php">CADASTRE-SE</a>
 		    </div>
 		</form>
 
@@ -100,7 +101,12 @@
    		</div>
    	</div>
   </div>
+<script>
+jQuery(function($){
+       $(".campoTag").mask("999.999.999");
+});
 
+</script>
 
 
 </body>

@@ -28,12 +28,16 @@
 	<title>Jinteki - Movimentação</title>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="estilos/w3.css">
+  <link rel="stylesheet" href="estilos/bootstrap.min.css" />
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/center.js"></script>
+  <script src="scripts/jquery.maskedinput.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilos/signin.css" />
   <link rel="stylesheet" href="estilos/movimentacao.css" />
+  <link rel="stylesheet" href="estilos/detalhes.css" />
+  <link rel="stylesheet" href="estilos/pendencias.css" /> 
 
 </head>
 
@@ -46,14 +50,30 @@
 			<h3 class="titulo">Movimentação</h3>
 
 			<form id ="busca" class="w3-row-padding">
-			  <p class="campo w3-third">Nome:</p><p class="campo w3-third">Nº da TAG:</p><p class="campo w3-third">Data:</p>
+			  <p class="campo col-md-4">Nome:</p><p class="campo col-md-4">Nº da TAG:</p><p class="campo col-md-4">Apartamento:</p>
 			  <br />
-			  <div class="w3-third"><input type="text" name="nome" class="w3-input" /></div>
-			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
-			  <div class="w3-third"><input type="date" name="data" class="w3-input sobe" /></div>
+			  
+				  <div class="col-md-4"><input type="text" name="nome" class="w3-input" /></div>
+				  <div class="col-md-4"><input type="text" name="tag" class="w3-input campoTag" /></div>
+				  <div class="col-md-4"><input type="text" name="partamento" class="w3-input campoAp" /></div>
+			  
+			  <br />
+			  <div class="container col-md-12" style="visibility: hidden">.</div>
+			  <p class="campo col-md-6">Horário do último acesso entre:</p>
+			  <p class="campo col-md-6">Dia do último acesso entre:</p>
+			  <br />
+			  
+			  <div class="col-md-3"><input type="time" name="tempoMenor" class=""></div>
+			  <div class="col-md-3"><input type="time" name="tempoMaior" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMenor" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMaior" class=""></div>
+		  		
+			  <br>
+			  
 			  <input type="submit" class="botao" value="Buscar">
 			  <button form="busca" class="botao">Relatório</button>
 			  <button form="busca" class="botao-branco" type="reset">Limpar</button>
+			  
 			</form>
 		
 			<br />
@@ -90,7 +110,13 @@
 		</div>
 	</div>
 
+<script>
+jQuery(function($){
+       $(".campoTag").mask("999.999.999");
+       $(".campoAp").mask("a999");
+});
 
+</script>
 
 	
 

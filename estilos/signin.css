@@ -4,6 +4,7 @@
       Cynthia Rocha Oliveira
 */
 
+
 li {
   font-weight: bold;
 }
@@ -114,6 +115,10 @@ li {
   padding-bottom: 18px;
 }
 
+.btn {
+  color: white;
+}
+
 .center {
   text-align: center;
 }
@@ -181,4 +186,8 @@ li {
   border-color: #bababa;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+#branco {
+  color: white;
 }
