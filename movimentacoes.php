@@ -8,9 +8,9 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
 
-	//$t="123456789";
-	//$nmMorador='Junior Barth';
-	//$numAP="A002";
+	$t="123456789";
+	$nmMorador='Junior Barth';
+	$numAP="A002";
 
 	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
 	$query.= ($t) ? " AND NumTAG = '$t'" : '';
@@ -25,7 +25,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jinteki - Clientes</title>
+	<title>Jinteki - Movimentação</title>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -38,26 +38,8 @@
 </head>
 
 <body>
-	<div class="container topo">
-		<div class="col-md-12 up">
-			<img class="navbar-brand" src="imagens/logo2.jpg" />
-			<p class="top-name">Jinteki</p>
-			<ul  class="direita">
-				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="clientes.php">Clientes</a></li>
-				<li><a href="apartamentos.php">Apartamentos</a></li>
-				<li><a href="#">Relatórios</a></li>
-				<li><a href="#">Pendências</a></li>
-				<li><a href="#" class="active">Movimentação</a></li>
-				<li><a href="#"><img class="icon" src="profile.png" /></a></li>
-				<li><a href="#"><img class="icon" src="sino.jpg" /></a></li>
-				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<br />
-
-	<div class="risco"></div>
+	
+	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 	<div class="container">
 		<div class="meio">
