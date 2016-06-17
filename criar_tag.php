@@ -32,29 +32,12 @@
 </head>
 
 <body>
-	<div class="container topo">
-		<div class="col-md-12 up">
-			<img class="navbar-brand" src="logo2.jpg" />
-			<p class="top-name">Jinteki</p>
-			<ul  class="direita">
-				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="clientes.php"">Clientes</a></li>
-				<li><a href="apartamentos.php">Apartamentos</a></li>
-				<li><a href="#">Relatórios</a></li>
-				<li><a href="#">Pendências</a></li>
-				<li><a href="movimentacoes.php">Movimentação</a></li>
-				<li><a href="#"><img class="icon" src="profile.png" /></a></li>
-				<li><a href="#"><img class="icon" src="sino.jpg" /></a></li>
-				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-	<br />
+
+	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 
 	<form action="" method="post" name="">
-	<div class="risco"></div>
-
+	
 	<div class="container">
 
 		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a href="tags.php">TAGs</a>><a class="active">Criar TAG</a></h3>

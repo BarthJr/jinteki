@@ -1,0 +1,26 @@
+.card {
+	background-color: #f2f2f2;
+	padding: 40px 50px;
+	margin-bottom: 15px;
+}
+
+.campoTag {
+	margin: 0;
+}
+
+.card-right {
+	display: inline;
+	float: right;
+	text-align: right;
+	position: relative;
+	top: -5px;
+}
+
+.card-right>a {
+	margin-left: 8px;
+}
+
+.card-right>a:hover {
+	text-decoration: none;
+}
+

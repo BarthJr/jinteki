@@ -46,14 +46,30 @@
 			<h3 class="titulo">Movimentação</h3>
 
 			<form id ="busca" class="w3-row-padding">
-			  <p class="campo w3-third">Nome:</p><p class="campo w3-third">Nº da TAG:</p><p class="campo w3-third">Data:</p>
+			  <p class="campo col-md-4">Nome:</p><p class="campo col-md-4">Nº da TAG:</p><p class="campo col-md-4">Apartamento:</p>
 			  <br />
-			  <div class="w3-third"><input type="text" name="nome" class="w3-input" /></div>
-			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
-			  <div class="w3-third"><input type="date" name="data" class="w3-input sobe" /></div>
+			  
+				  <div class="col-md-4"><input type="text" name="nome" class="w3-input" /></div>
+				  <div class="col-md-4"><input type="number" name="tag" class="w3-input" /></div>
+				  <div class="col-md-4"><input type="text" name="partamento" class="w3-input" /></div>
+			  
+			  <br />
+			  <div class="container col-md-12" style="visibility: hidden">.</div>
+			  <p class="campo col-md-6">Horário do último acesso entre:</p>
+			  <p class="campo col-md-6">Dia do último acesso entre:</p>
+			  <br />
+			  
+			  <div class="col-md-3"><input type="time" name="tempoMenor" class=""></div>
+			  <div class="col-md-3"><input type="time" name="tempoMaior" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMenor" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMaior" class=""></div>
+		  		
+			  <br>
+			  
 			  <input type="submit" class="botao" value="Buscar">
 			  <button form="busca" class="botao">Relatório</button>
 			  <button form="busca" class="botao-branco" type="reset">Limpar</button>
+			  
 			</form>
 		
 			<br />

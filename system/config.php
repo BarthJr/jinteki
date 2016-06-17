@@ -9,8 +9,8 @@
 	//BD
 	define('DB_HOSTNAME','localhost');
 	define('DB_USERNAME', 'root');
-	define('DB_PASSWORD', 'admin');
-	define('DB_DATABASE', 'Jinteki');
+	define('DB_PASSWORD', '');
+	define('DB_DATABASE', 'jinteki');
 	define('DB_CHARSET','utf8');
 
 	//URL'S
