@@ -1,26 +1,14 @@
+
 <!--
 	Autores:João Moacir Barth Junior
 			Alan Palomero Machado
 			Cynthia Rocha Oliveira
-
 -->
 <?php
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
-
-	//$t="222222222";
-	//$nmMorador='Junior Barth';
-	//$numAP="A002";
-
-	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
-	$query.= ($t) ? " AND NumTAG = '$t'" : '';
-	$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
-	$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
-	//$query.="WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND m.Nome = 'Junior Barth'";
-
-	$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
-
-	$dataUser = GetUser();
+	
+	//$dataUser = GetUser();
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,23 +44,23 @@
 		</div>
 	</div>
 	<br />
-
 	<div class="risco"></div>
-
 	<div class="container">
 		<div class="meio">
 			<h3 class="titulo">TAGs</h3>
-
-			<form id ="busca" class="w3-row-padding">
+			<?php $data= Buscar() ?>
+			<form id ="busca" class="w3-row-padding" action="" method="post" >
 			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third">Apartamento:</p>
 			  <br />
-			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="apartamento" class="w3-input" /></div>
-			  <input type="submit" class="botao" value="Buscar">
+			  <div class="w3-third"><input type="number" name="tag" value='<?php if(!GetPost('clear')) echo GetPost('tag'); ?>' class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="nome-cliente" value='<?php if(!GetPost('clear')) echo GetPost('nome-cliente'); ?>' class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="apartamento" value='<?php if(!GetPost('clear')) echo GetPost('apartamento'); ?>' class="w3-input" /></div>
+			  <input type="submit" name="send" class="botao" value="Buscar">
 			  <button form="busca" class="botao">Relatório</button>
-			  <button form="busca" class="botao-branco" type="reset">Limpar</button>
-			</form>
+			  <input form="busca" class="botao-branco" type="submit" name="clear" value="Limpar">
+			  
+
+			
 		
 			<br />
 			
@@ -87,9 +75,7 @@
 			    </thead>
 			    <tbody>
 			    <?php 
-			    	//var_dump($data);
 			    	foreach ($data as $res) {
-
 			    ?>
 			      <tr>
 			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
@@ -104,16 +90,11 @@
 			     <?php } ?>
 			    </tbody>
 			  </table>
-
 			  <a class="botao" href="criar_tag.php">Criar TAG</a>
 			  <br /><br />
 			
 		</div>
 	</div>
-
-
-
 	
-
 </body>
 </html>

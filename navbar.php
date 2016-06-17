@@ -23,12 +23,12 @@
 			<img class="navbar-brand" src="imagens/logo2.jpg" />
 			<p class="top-name">Jinteki</p>
 			<ul  class="direita">
-				<li><a href="apartamentos.html">Apartamentos</a></li>
-				<li><a href="clientes.html">Moradores</a></li>
-				<li><a href="tags.html">TAGs</a></li>
-				<li><a href="relatorios.html">Relatórios</a></li>
-				<li><a href="pendencias.html">Pendências</a></li>
-				<li><a href="movimentacoes.html" class="">Movimentação</a></li>
+				<li><a href="apartamentos.php">Apartamentos</a></li>
+				<li><a href="clientes.php">Moradores</a></li>
+				<li><a href="tags.php">TAGs</a></li>
+				<li><a href="#">Relatórios</a></li>
+				<li><a href="#">Pendências</a></li>
+				<li><a href="movimentacoes.php" class="">Movimentação</a></li>
 				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
 			</ul>
 		</div>
