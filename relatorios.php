@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jinteki - Movimentação</title>
+	<title>Jinteki - Relatórios</title>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="estilos/w3.css">
@@ -93,6 +93,34 @@
 				  <button form="buscaTag" class="botao">Gerar</button>
 				  <button form="buscaTag" class="botao-branco" type="reset" name="clear">Limpar</button>
 				  </form>
+			</div>
+
+			<div>
+			    <input type="checkbox" id="plusCli" />
+			    <label class="cli" for="plusCli"></label>
+				<form id ="buscaCli" class="w3-row-padding hide-show">
+			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third ">Apartamento:</p>
+			  <br />
+			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="apartamento" class="w3-input campoAp" /></div>
+			  <button form="buscaCli" class="botao">Gerar</button>
+			  <button form="buscaCli" class="botao-branco" type="reset" name="clear">Limpar</button>
+			</form>
+			</div>
+
+			<div>
+			    <input type="checkbox" id="plusAp" />
+			    <label class="App" for="plusAp"></label>
+			<form id ="buscaAp" class="w3-row-padding hide-show">
+			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third">Apartamento:</p>
+			  <br />
+			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
+			  <div class="w3-third"><input type="text" name="apartamento" class="w3-input" /></div>
+			  <button form="buscaCli" class="botao">Gerar</button>
+			  <button form="buscaAp" class="botao-branco" type="reset" name="clear">Limpar</button>
+			</form>
 			</div>
 
 </body>

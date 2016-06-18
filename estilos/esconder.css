@@ -48,6 +48,30 @@ label {
     text-align: center;
 }
 
+.cli:after {
+    content: 'Moradores';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
+.App:after {
+    content: 'Apartamentos';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
 .hide-show {
     display: none;
     font-family: sans-serif;
