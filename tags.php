@@ -42,9 +42,21 @@
 			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third">Apartamento:</p>
 			  <br />
 
-			  <div class="w3-third"><input type="number" name="tag" value='<?php if(!GetPost('clear')) echo GetPost('tag'); ?>' class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="nome-cliente" value='<?php if(!GetPost('clear')) echo GetPost('nome-cliente'); ?>' class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="apartamento" value='<?php if(!GetPost('clear')) echo GetPost('apartamento'); ?>' class="w3-input" /></div>
+			  <div class="col-md-4"><input type="number" name="tag" value='<?php if(!GetPost('clear')) echo GetPost('tag'); ?>' class="w3-input" /></div>
+			  <div class="col-md-4"><input type="text" name="nome-cliente" value='<?php if(!GetPost('clear')) echo GetPost('nome-cliente'); ?>' class="w3-input" /></div>
+			  <div class="col-md-4"><input type="text" name="apartamento" value='<?php if(!GetPost('clear')) echo GetPost('apartamento'); ?>' class="w3-input" /></div>
+				
+							  <div class="container col-md-12" style="visibility: hidden">.</div>
+
+			  <p class="campo w3-third">Status:</p><p class="campo w3-third">Permissão:</p><p class="campo w3-third" style="visibility: hidden">.</p>
+			  <br /><br>
+
+			  <div class="col-md-4" style="display: block"><select><option></option><option>Ativo</option><option>Inativo</option></select></div>
+			  <div class="col-md-4" style="display: block"><select><option></option><option>Morador</option><option>Administrador local</option><option>Administrador do sistema</option></select></div>
+			  <div class="col-md-4" style="visibility: hidden; display: block">.</div>
+			  
+				<div class="container col-md-12" style="visibility: hidden">.</div>
+
 			  <input type="submit" name="send" class="botao" value="Buscar">
 
 			  <button form="busca" class="botao">Relatório</button>
