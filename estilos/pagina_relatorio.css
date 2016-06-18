@@ -1,0 +1,38 @@
+* {
+	font-size: 12pt;
+}
+
+.a4 {
+	width: 210mm;
+	height: 297mm;
+	border: 1px solid #a1a1a1;
+	margin: 20px;
+	padding: 10px;
+	position: relative;
+}
+
+.risco2 {
+	margin: 0;
+	margin-top: 10px;
+}
+
+.icone {
+	width: 30px;
+	margin-right: 10px;
+}
+
+.jinteki {
+	font-weight: bold;
+}
+
+.bottom-left {
+	position: absolute;
+	bottom: 3px;
+	left: 3px;
+}
+
+.bottom-right {
+	position: absolute;
+	bottom: 3px;
+	right: 3px;
+}
