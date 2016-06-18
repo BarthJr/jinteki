@@ -61,7 +61,7 @@
 
 			  <button form="busca" class="botao">Relatório</button>
 			  <input form="busca" class="botao-branco" type="submit" name="clear" value="Limpar">
-			  
+			  </form>
 
 			
 		
