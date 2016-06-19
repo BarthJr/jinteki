@@ -63,23 +63,24 @@
 			        <th>Nome</th>
 			        <th>Status</th>
 			        <th>Permissão</th>
-			        <th>Último Acesso</th>
 			      </tr>
 			    </thead>
 			    <tbody>
-			    <?php 
-			    	foreach ($data as $res) {
+			    <?php
+			    	$query="SELECT t.NumTag, a.NomeAp, m.Nome, t.Estado, t.CodPermissao FROM TAG t LEFT JOIN Morador m ON t.CodMorador = m.CodMorador LEFT JOIN Apartamento a ON m.CodApartamento = a.CodAp ORDER BY t.NumTag";
+			    	$data1= DBRead1($query);
+			    	foreach ($data1 as $res) {
 			    ?>
 			      <tr>
-			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
+			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTag]" ?>" title="detalhes_tag"><?php echo $res['NumTag']  ?></a>
 			      	</td>
-			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAP]" ?>" title="detalhes_ap"><?php echo $res['NomeAP']  ?></a>
+			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAp]" ?>" title="detalhes_ap"><?php echo $res['NomeAp']  ?></a>
 			      	</td>
 			      	<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
 			      	</td>
-			      	<td>ATIVO</td>
-			      	<td>Morador</td>
-			      	<td> <?php if($res['UltAcesso']) echo date("d/m/Y",$res['UltAcesso']);?> </td>
+			      	<td><?php if($res['Estado'] == 1 ) echo "Ativo"; else echo "Inativo";  ?></td>
+			      	<td><?php if($res['CodPermissao'] == 1 ) echo "Morador"; elseif($res['CodPermissao'] == 2 ) echo "Adm Ap"; else echo "Adm Sistema"   ?></td>
+			      	
 			      </tr>
 			     <?php } ?>
 			    </tbody>

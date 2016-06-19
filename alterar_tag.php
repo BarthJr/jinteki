@@ -37,11 +37,11 @@
 
 	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
-
-<form action="" method="post">
+<?php UpdateFormTag();?>
+<form action="alterar_tag.php" method="post" id="envio">
 	<div class="container">
 
-		<h3 class="titulo"><a href="movimentacao.html">Home</a>><a href="tags.html">TAGs</a>><a class="active"><?php echo $key?></a></h3>
+		<h3 class="titulo"><a href="movimentacao.html">Home</a>><a href="tags.php">TAGs</a>><a class="active"><?php echo $key?></a></h3>
 
 		<div class="meio">
 			<div class="titulo-detalhes">Situação: </div> 
@@ -59,13 +59,13 @@
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Apartamento: </div> 
-			<select name= "Ap" class="inline">
+			<select name= "ap" class="inline">
 			<?php
 			  $dataAP=DBRead('Apartamento as a','','a.CodAp,a.NomeAp');
 			  foreach ($dataAP as $res) {
 
 			?>
-			  <option value="echo $res['CodAp']"
+			  <option value=" <?php echo $res['CodAp'] ?> "
 			  	<?php if($dataAux['NomeAp'] == $res['NomeAp'])
 			    		echo "selected='selected'"
 			    	?>
@@ -82,13 +82,13 @@
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Morador: </div> 
-			<select name= "dweller" class="inline">
+			<select name= "morador" class="inline">
 			  <?php
 				$dataM=DBRead('Morador as m','','m.CodMorador,m.Nome');
 			  	foreach ($dataM as $res) {
 
-			  ?>
-			    <option value="echo $res['CodMorador']"
+			  ?>	
+			    <option value="<?php echo $res['CodMorador'] ?>"
 			    	<?php if($dataAux['Nome'] == $res['Nome'])
 			    		echo "selected='selected'"
 			    	?>
@@ -150,7 +150,7 @@
 			  		echo "selected='selected'";
 			  	?>
 			  >Administrador do apartamento</option>
-			  <option value="3"
+			  <option value="3"	
 			  	<?php if($dataAux['CodPermissao']==3)
 			  		echo "selected='selected'";
 			  	?>
@@ -177,7 +177,7 @@
 	        <div class="modal-body">
 	          <p class="vertical-center">Tem certeza que deseja alterar as alterações feitas em <a class="limpo" href="<?php echo URL_DETALHES_TAG."?userkey=$key" ?>" target="_blank"><?php echo $key?></a>?</p>
 	          <button type="button" class="btn btn-default left-2" data-dismiss="modal">Cancelar</button>
-	          <button class="btn btn-default right-2" type="submit" value="Submit" name="send" data-dismiss="modal" >Salvar</button>
+	          <input class="btn btn-default right-2" type="submit" form="envio" name="send" value="Salvar"></input>
 	        </div>
 	      </div>      
    		</div>

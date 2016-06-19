@@ -15,7 +15,7 @@
 			$active=GetPost('active');
 			$cod_morador=GetPost('cod_morador');
 			$perm=GetPost('perm');
-			var_dump($nm_tag,$active,$morador,$perm);
+			//var_dump($nm_tag,$active,$morador,$perm);
 
 			$register_tag=RegisterTag($nm_tag,$active,$cod_morador,$perm);
 		}
@@ -33,13 +33,39 @@
 			$cpf=GetPost('cpf');
 			var_dump($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
 
-			//$register_dwe=RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
+			RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
+
+		}
+	}
+	function UpdateFormTag(){
+		if(GetPost('send')){
+			$estado=GetPost('estado');
+			$ap=GetPost('ap');
+			$morador=GetPost('morador');
+			$perm=GetPost('perm');
+			var_dump($estado,$ap,$morador,$perm);
+
+			$update_tag=RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
 
 		}
 	}
 	//Busca na pagina de acordo com os campos digitados
 	function Buscar(){
 		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
+		if(GetPost('send')){
+			$t=GetPost('tag');
+			$nmMorador=GetPost('nome-cliente');
+			$numAP=GetPost('apartamento');
+
+			$query.= ($t) ? " AND NumTAG = '$t'" : '';
+			$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
+			$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
+		}
+		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
+		return $data;
+
+	}
+	function BuscarTag(){
 		if(GetPost('send')){
 			$t=GetPost('tag');
 			$nmMorador=GetPost('nome-cliente');

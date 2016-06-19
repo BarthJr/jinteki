@@ -68,8 +68,7 @@
 			<select name="cod_morador" class="inline">
 			<option value=""></option>
 			<?php
-				$dataM=DBRead('Morador as m','','m.CodMorador,m.Nome');
-				var_dump($dataM);
+				$dataM=DBRead('Morador as m','ORDER BY m.Nome','m.CodMorador,m.Nome');
 			  	foreach ($dataM as $res) : ?>
 			  		<option value="<?php echo $res['CodMorador'] ?> "><?php echo $res['Nome'];?></option>
 			<?php endForEach; ?>  
@@ -147,9 +146,9 @@
   </div>
   </form>
 <script>
-jQuery(function($){
+/*jQuery(function($){
        $("#numeroTAG").mask("999.999.999");
-});
+}); */
 </script>
 </body>
 </html>

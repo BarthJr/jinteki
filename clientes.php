@@ -12,13 +12,13 @@
 	//$nmMorador='Junior Barth';
 	//$numAP="A002";
 
-	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
+	/*$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
 	$query.= ($t) ? " AND NumTAG = '$t'" : '';
 	$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
-	$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
+	$query.= ($numAP) ? " AND NomeAP = '$numAP'" : ''; */
 	//$query.="WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND m.Nome = 'Junior Barth'";
 
-	$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
+	//$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
 
 	$dataUser = GetUser();
 ?>
@@ -50,7 +50,7 @@
 			<h3 class="titulo">Moradores</h3>
 
 			<form id ="busca" class="w3-row-padding">
-			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third ">Apartamento:</p>
+			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do morador:</p><p class="campo w3-third ">Apartamento:</p>
 			  <br />
 			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
 			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
@@ -67,30 +67,42 @@
 			    <thead>
 			      <tr>
 			        <th>Nome</th>
-			        <th>TAG</th>
-			        <th>Apto.</th>			        
-			        <th>Telefone</th>
-			        <th>RG</th>
+			        <th>Apto.</th>
 			        <th>CPF</th>
+			        <th>Telefone</th>
+			        <th>Email</th>
+			        			        
+			        
+			        
 
 			      </tr>
 			    </thead>
 			    <tbody>
-			    <?php 
-			    	//var_dump($data);
-			    	foreach ($data as $res) {
+			    <?php
+			    	//$query"SELECT m.CodMorador FROM Morador as m"; 
+			    	//$query="SELECT t.NumTag, a.NomeAp,m.Nome, m.CodMorador FROM TAG t LEFT JOIN Morador m ON t.CodMorador = m.CodMorador LEFT JOIN Apartamento a ON m.CodApartamento = a.CodAp ORDER BY t.NumTag";
+			    	//$data1= DBRead1($query);
+			    	$data1=DBRead("Morador as m, Apartamento as a",'WHERE m.CodApartamento = a.CodAp ORDER BY m.Nome','m.Nome, a.NomeAp, m.CPF, m.Email, m.CodMorador');
+			    	//var_dump($data1);
+			    	foreach ($data1 as $res) {
 
 			    ?>
 			      <tr>
+			      <?php
+			      	//$dados = DBRead("Morador as m, Telefone as tel, Apartamento as a","WHERE tel.CodMorador = '$res[CodMorador]' AND m.CodMorador = '$res[CodMorador] AND m.CodApartamento = a.CodAp' ORDER BY m.Nome LIMIT 1",'m.Nome, a.NomeAp, tel.NumTel, m.CPF, m.Email');
+
+
+			      ?>
 			      	<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
 			      	</td>
-			      	<td> <a class="campoTag" href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
+			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAp]" ?>" title="detalhes_ap"><?php echo $res['NomeAp']  ?></a>
 			      	</td>
-			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAP]" ?>" title="detalhes_ap"><?php echo $res['NomeAP']  ?></a>
-			      	</td>			      	
-			      	<td class="campoTelefone">4133333333</td>
-			      	<td>5536934576</td>
-			      	<td id="CPF">102980397</td>
+			      	<td id="CPF"> 
+			      		<?php echo $res['CPF']?>
+			      	</td>
+			      				      	
+			      	<td class="campoTelefone"> <?php $dados = DBRead("Telefone as tel","WHERE tel.CodMorador = '$res[CodMorador]' ",'tel.NumTel'); echo $dados[0]['NumTel']; ?> </td>
+			      	<td><?php echo $res['Email']?></td>
 
 			      </tr>
 			     <?php } ?>
