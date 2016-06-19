@@ -99,7 +99,9 @@
 	}
 	function RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf){
 		$query = "INSERT INTO Morador(Nome,CodApartamento,Email,RG,CPF) VALUES ('$nm_morador','$ap','$email','$rg','$cpf')";
-		return DBExecute($query);
+		DBExecute($query);
+		$query = "INSERT INTO Telefone(NumTel,CodMorador) VALUES ('$tel1','$cpf'),('$tel2','$cpf')";
+		DBExecute($query);
 	}
 
 	//Verifica se Login Existe
@@ -215,6 +217,22 @@
 
 
 	 }
+	 function DBRead1 ($query){
+	 	$result = DBExecute($query);
+	 	if(!mysqli_num_rows($result)){
+			return false;
+	 	}
+		else{
+			while($res = mysqli_fetch_assoc($result)){
+				$data[] = $res;
+			}
+			return $data;
+		}
+
+
+	 }
+	 
+
 
 	 function DBDelete($table, $where = null){
 	 	$where = ($where) ? " WHERE {$where}" : null;

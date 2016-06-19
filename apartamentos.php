@@ -64,27 +64,29 @@
 				<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>TAG</th>
-			        <th>Apartamento</th>
-			        <th>Nome</th>
+			      	<th>Apartamento</th>
+			        <th>Quantidade de Moradores</th>
 			        <th colspan=2>Último Acesso</th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			    <?php 
 			    	//var_dump($data);
-			    	foreach ($data as $res) {
+			    	$dataqnt=DBRead("Apartamento as a",'','a.NomeAp, a.CodAp');
+			    	foreach ($dataqnt as $res) {
 
 			    ?>
 			      <tr>
-			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
+			      	<?php 
+			      		$qnt= DBRead("Morador as m","WHERE m.CodApartamento = '$res[CodAp]'",'count(*) as morador');
+			      		$time = DBRead("TAG as t, Morador as m","WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = '$res[CodAp]' ORDER BY t.UltAcesso DESC",'t.UltAcesso');
+			      		//$time=DBRead("Morador as m, Apartamento as a, TAG as t","WHERE");
+			      	?>
+			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAp]" ?>" title="detalhes_ap"><?php echo $res['NomeAp']  ?></a>
 			      	</td>
-			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAP]" ?>" title="detalhes_ap"><?php echo $res['NomeAP']  ?></a>
-			      	</td>
-			      	<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
-			      	</td>
-			      	<td> <?php if($res['UltAcesso']) echo date("d/m/Y",$res['UltAcesso']);?> </td>
-			      	<td> <?php if($res['UltAcesso']) echo date("H:i:s",$res['UltAcesso']);  ?> </td>
+			      	<td> <?php  echo $qnt[0]['morador'];?></td>
+			      	<td> <?php if($time[0]['UltAcesso']) echo date("d/m/Y",$time[0]['UltAcesso']);?> </td>
+			      	<td> <?php if($time[0]['UltAcesso']) echo date("H:i:s",$time[0]['UltAcesso']);  ?> </td>
 			      </tr>
 			     <?php } ?>
 			    </tbody>

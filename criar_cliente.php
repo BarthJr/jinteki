@@ -50,7 +50,7 @@
 			<select name="ap" class="inline">
 			<option value=""></option>
 			<?php
-			  $dataAP=DBRead('Apartamento as a','','a.CodAp,a.NomeAp');
+			  $dataAP=DBRead('Apartamento as a','ORDER BY a.NomeAp desc','a.CodAp,a.NomeAp');
 			  foreach ($dataAP as $res): ?>
 			  	<option value="<?php echo $res['CodAp'] ?>"><?php echo $res['NomeAp'];?></option>
 			  <?php endForEach;	?>
@@ -65,8 +65,13 @@
 				                <form role="form" autocomplete="off" id="alt">
 				                    <div class="entry input-group col-xs-3">
 
-				                        <select>
-				                        	<option class="form-control " name="fields" value="PEGA DO BANCO">PEGA DO BANCO</option>
+				                        <select class="form-control" name= "fields">
+				                        	<option value=""></option>
+				                        	<?php
+												$dataM=DBRead('TAG as t','WHERE t.CodMorador is NULL AND t.Estado = 1 ORDER BY t.NumTag desc','t.CodMorador,t.NumTag');
+											  	foreach ($dataM as $res) : ?>
+											  		<option class="form-control campoTag" value="<?php echo $res['NumTag']; ?> "><?php echo $res['NumTag'];?></option>
+											<?php endForEach; ?> 
 				                        </select>
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
@@ -154,11 +159,11 @@ $(function()
 </script>
 
 <script>
-jQuery(function($){
+/*jQuery(function($){
        $(".campoTelefone").mask("(99) 9999-9999");
        $("#CPF").mask("999.999.999-99");
        $(".campoTag").mask("999.999.999");
-});
+}); */
 </script>
 	
 

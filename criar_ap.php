@@ -54,7 +54,14 @@
 				            <div class="controls"> 
 				                <form role="form" autocomplete="off">
 				                    <div class="entry input-group col-xs-3">
-				                        <input class="form-control" name="fields[]" type="text" placeholder="Adicionar Morador" />
+				                        <select class="form-control" name="fields">
+				                        	<option value=""></option>
+				                        	<?php
+				$dataM=DBRead('Morador as m','ORDER BY m.Nome','m.CodMorador,m.Nome');
+			  	foreach ($dataM as $res) : ?>
+			  		<option value="<?php echo $res['CodMorador'] ?> "><?php echo $res['Nome'];?></option>
+			<?php endForEach; ?>
+				                        </select>
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
 				                                <span class="glyphicon glyphicon-plus"></span>
@@ -70,35 +77,9 @@
 
 			
 
-			  <div class="titulo-detalhes">TAGs: </div> <br />
-
-			    <div class="container">
-					<div class="row">
-				        <div class="control-group" id="fields">
-				            <div class="controls-tag"> 
-				                <form role="form" autocomplete="off">
-				                    <div class="entry input-group col-xs-3">
-				                        <input class="form-control campoTag" name="fields[]" type="text" placeholder="Adicionar TAG" />
-				                    	<span class="input-group-btn">
-				                            <button class="btn btn-success btn-add-tag" type="button">
-				                                <span class="glyphicon glyphicon-plus"></span>
-				                            </button>
-				                        </span>
-				                    </div>
-				                </form>
-				            <br>
-				            </div>
-				        </div>
-					</div>
-				</div>
-			  <div class="titulo-detalhes">Administrador: </div> <br />
-
-			    <select>
-			    <option value=""></option>
-				  <option value="Bruno Dias">Bruno Dias</option>
-				  <option value="Alfonso Romelho">Alfonso Romelho</option>
-				</select>
-			  <br />
+			  
+			  
+			  
 			  
 			  <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;"></FORM>
 			  <a type="button" class="botao" data-toggle="modal" data-target="#modalCriar">Criar</a>
