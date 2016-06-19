@@ -54,7 +54,11 @@
 				            <div class="controls"> 
 				                <form role="form" autocomplete="off">
 				                    <div class="entry input-group col-xs-3">
-				                        <input class="form-control" name="fields[]" type="text" placeholder="Adicionar Morador" />
+				                        <select class="form-control" name="fields[]">
+				                        	<option></option>
+				                        	<option>Amauri Dos Santos</option>
+				                        	<option>João da Silva</option>
+				                        </select>
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
 				                                <span class="glyphicon glyphicon-plus"></span>
@@ -78,7 +82,11 @@
 				            <div class="controls-tag"> 
 				                <form role="form" autocomplete="off">
 				                    <div class="entry input-group col-xs-3">
-				                        <input class="form-control campoTag" name="fields[]" type="text" placeholder="Adicionar TAG" />
+				                        <select class="form-control" name="fields[]">
+				                        	<option></option>
+				                        	<option>123.654.876</option>
+				                        	<option>123.765.134</option>
+				                        </select>
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add-tag" type="button">
 				                                <span class="glyphicon glyphicon-plus"></span>
