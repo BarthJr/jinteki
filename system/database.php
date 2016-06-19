@@ -92,6 +92,15 @@
 
 
 	}
+	function RegisterTag($nm_tag,$active,$cod_morador,$perm){
+
+		$query = "INSERT INTO TAG(NumTag, Estado, CodMorador, CodPermissao) VALUES ('$nm_tag', '$active', '$cod_morador', '$perm')";
+		return DBExecute($query);
+	}
+	function RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf){
+		$query = "INSERT INTO Morador(Nome,CodApartamento,Email,RG,CPF) VALUES ('$nm_morador','$ap','$email','$rg','$cpf')";
+		return DBExecute($query);
+	}
 
 	//Verifica se Login Existe
 	function UserNameExists($username){
