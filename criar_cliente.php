@@ -65,8 +65,10 @@
 				                <form role="form" autocomplete="off" id="alt">
 				                    <div class="entry input-group col-xs-3">
 
-				                        <select>
-				                        	<option class="form-control " name="fields" value="PEGA DO BANCO">PEGA DO BANCO</option>
+				                        <select class="form-control" name="fields[]">
+				                        	<option></option>
+				                        	<option>123.654.876</option>
+				                        	<option>123.765.134</option>
 				                        </select>
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
