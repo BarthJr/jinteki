@@ -30,6 +30,7 @@
 				<li><a href="relatorio2.php">Relatórios</a></li>
 				<li><a href="pendencias.php">Pendências</a></li>
 				<li><a href="movimentacoes.php" class="">Movimentação</a></li>
+				<li><a href="perfil.php"><img class="icon" src="imagens/profile.png" style="width: 29px" /></a></li>
 				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
 			</ul>
 		</div>
