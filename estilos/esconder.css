@@ -1,0 +1,80 @@
+/*
+ * These are our default styles for the page.
+ * When you first get here, it shows a nice +
+ * in the button and no text.
+ */
+input[type="checkbox"] {
+    position: absolute;
+    display: block;
+    top: -990px;
+    left: -990px;
+}
+label {
+    position: relative;
+    display: block;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    color: white;
+    background-color: #49201a;
+    border-radius: 0px;
+    font-family: 'Passion One', cursive;
+    letter-spacing: 1px;
+    min-width: 210px;
+    color: white;
+    padding: 5px 19px;
+}
+.mov:after {
+    content: 'Movimentação';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
+.taag:after {
+    content: 'TAGs';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
+.cli:after {
+    content: 'Moradores';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
+.App:after {
+    content: 'Apartamentos';
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 24px;
+    line-height: 1em;
+    font-family: sans-serif;
+    margin: 5px;
+    text-align: center;
+}
+
+.hide-show {
+    display: none;
+    font-family: sans-serif;
+    border: 1px solid black;
+}
+

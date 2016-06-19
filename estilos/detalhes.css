@@ -1,0 +1,70 @@
+/*
+  Autores:João Moacir Barth Junior
+      Alan Palomero Machado
+      Cynthia Rocha Oliveira
+*/
+.meio {
+	border: 3px solid #bfbfbf;
+	padding: 20px;
+}
+
+.titulo {
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.titulo-detalhes {
+	display: inline;
+	font-size: 1.1em;
+	font-weight: bold;
+
+}
+
+p {
+	display: inline;
+}
+
+div>a, div>a:hover {
+	color: #4A2FBA;
+}
+
+p>a , p>a:hover{
+	margin-left: 40px;
+	color: #4A2FBA;
+}
+
+.botao-branco {
+	display: inline-block;
+}
+
+.botao {
+	display: inline-block;
+	color: white;
+}
+
+.botao:hover {
+	color:white;
+	text-decoration: none;
+	background-color: #5a312b;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.inline2 {
+	display: inline;
+}
+
+.limpo {
+	margin-left: 0;
+}
+
+.limpo:hover {
+	margin-left: 0;
+}
+
+.vertical-center {
+	position: relative;
+	top: 20px;
+}

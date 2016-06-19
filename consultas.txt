@@ -1,0 +1,28 @@
+--------------------Selects---------------------
+SELECT t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso
+FROM TAG as t, Apartamento as a, Morador as m
+WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento;
+
+
+Situação: Ativo 
+Apartamento: A102 
+Cliente: Bruno Dias
+Permissão de acesso: Todos os horários
+Último acesso: 09/04/2015
+Último dono: Bruno Dias
+
+Select t.Estado, a.NomeAp, m.Nome, t.UltAcesso, t.CodAntigoM
+FROM TAG as t, Apartamento as a, Morador as m
+WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND t.NumTag = '$key';
+
+Situação:   
+
+Apartamento:   
+
+Cliente:   
+
+Permissão de acesso:   
+
+Permissões:   
+
+Select t.Estado, a.NomeAp, m.Nome
