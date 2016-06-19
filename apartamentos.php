@@ -64,9 +64,10 @@
 				<table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>TAG</th>
 			        <th>Apartamento</th>
-			        <th>Nome</th>
+			        <th>Administrador</th>
+			        <th>Tag Adm.</th>
+			        <th>Nº moradores</th>
 			        <th colspan=2>Último Acesso</th>
 			      </tr>
 			    </thead>
@@ -77,12 +78,15 @@
 
 			    ?>
 			      <tr>
-			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
-			      	</td>
 			      	<td> <a href="<?php echo URL_DETALHES_AP."?userkey=$res[NomeAP]" ?>" title="detalhes_ap"><?php echo $res['NomeAP']  ?></a>
 			      	</td>
-			      	<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
+					<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
 			      	</td>
+			      	<td> <a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>" title="detalhes_tag"><?php echo $res['NumTAG']  ?></a>
+			      	</td>
+			      	<td>4
+			      	</td>
+			      	
 			      	<td> <?php if($res['UltAcesso']) echo date("d/m/Y",$res['UltAcesso']);?> </td>
 			      	<td> <?php if($res['UltAcesso']) echo date("H:i:s",$res['UltAcesso']);  ?> </td>
 			      </tr>
