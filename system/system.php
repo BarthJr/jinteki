@@ -9,6 +9,34 @@
 	Init(); 
 
 
+	function ValidateFormTag(){
+		if(GetPost('send')){
+			$nm_tag=GetPost('nm_tag');
+			$active=GetPost('active');
+			$cod_morador=GetPost('cod_morador');
+			$perm=GetPost('perm');
+			var_dump($nm_tag,$active,$morador,$perm);
+
+			$register_tag=RegisterTag($nm_tag,$active,$cod_morador,$perm);
+		}
+
+	}
+	function ValidateFormDweller(){
+		if(GetPost('send')){
+			$nm_morador=GetPost('nm_morador');
+			$ap=GetPost('ap');
+			$nm_tag=GetPost('fields');
+			$tel1=GetPost('tel1');
+			$tel2=GetPost('tel2');
+			$email=GetPost('email');
+			$rg=GetPost('rg');
+			$cpf=GetPost('cpf');
+			var_dump($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
+
+			//$register_dwe=RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
+
+		}
+	}
 	//Busca na pagina de acordo com os campos digitados
 	function Buscar(){
 		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";

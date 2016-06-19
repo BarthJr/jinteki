@@ -1,21 +1,8 @@
-
-<!--
-	Autores:João Moacir Barth Junior
-			Alan Palomero Machado
-			Cynthia Rocha Oliveira
--->
-<?php
-	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
-	//AcessPrivate();
-	
-	//$dataUser = GetUser();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jinteki - Relatórios</title>
-	<meta charset="utf-8" />
+  <title>Jinteki</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="estilos/w3.css">
   <link rel="stylesheet" href="estilos/bootstrap.min.css" />
@@ -27,100 +14,87 @@
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
   <link rel="stylesheet" href="estilos/pendencias.css" /> 
-  <link rel="stylesheet" href="estilos/esconder.css" /> 
-
+  <link href='https://fonts.googleapis.com/css?family=Passion+One:400,900' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
-	
-	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
+<div class="container">
+	<div class="meio" style="width: 210mm; height: 297mm">
 
-	<div class="container">
-		<div class="meio">
-
-			<div>
-			    <input type="checkbox" id="plus" />
-			    <label class="mov" for="plus"></label>
-				<form id ="busca" class="w3-row-padding hide-show">
-				  <p class="campo col-md-4">Nome:</p><p class="campo col-md-4">Nº da TAG:</p><p class="campo col-md-4">Apartamento:</p>
-				  <br />
-				  
-					  <div class="col-md-4"><input type="text" name="nome" class="w3-input" /></div>
-					  <div class="col-md-4"><input type="text" name="tag" class="w3-input campoTag" /></div>
-					  <div class="col-md-4"><input type="text" name="partamento" class="w3-input campoAp" /></div>
-				  
-				  <br />
-				  <div class="container col-md-12" style="visibility: hidden">.</div>
-				  <p class="campo col-md-6">Acessos entre:</p>
-				  <p class="campo col-md-6">Horário</p>
-				  <br />
-				  
-				  <div class="col-md-3"><input type="time" name="tempoMenor" class=""></div>
-				  <div class="col-md-3"><input type="time" name="tempoMaior" class=""></div>
-				  <div class="col-md-3"><input type="date" name="diaMenor" class=""></div>
-				  <div class="col-md-3"><input type="date" name="diaMaior" class=""></div>
-
-				  <br>
-				  
-				  <button form="busca" class="botao">Gerar</button>
-				  <button form="busca" class="botao-branco" type="reset">Limpar</button>
-				</form>
-			</div>
-
-			<div>
-			    <input type="checkbox" id="plusTag" />
-			    <label class="taag" for="plusTag"></label>
-				<form id ="buscaTag" class="w3-row-padding hide-show">
-				  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third">Apartamento:</p>
-				  <br />
-
-				  <div class="col-md-4"><input type="number" name="tag" value='<?php if(!GetPost('clear')) echo GetPost('tag'); ?>' class="w3-input" /></div>
-				  <div class="col-md-4"><input type="text" name="nome-cliente" value='<?php if(!GetPost('clear')) echo GetPost('nome-cliente'); ?>' class="w3-input" /></div>
-				  <div class="col-md-4"><input type="text" name="apartamento" value='<?php if(!GetPost('clear')) echo GetPost('apartamento'); ?>' class="w3-input" /></div>
-					
-								  <div class="container col-md-12" style="visibility: hidden">.</div>
-
-				  <p class="campo w3-third">Status:</p><p class="campo w3-third">Permissão:</p><p class="campo w3-third" style="visibility: hidden">.</p>
-				  <br /><br>
-
-				  <div class="col-md-4" style="display: block"><select><option></option><option>Ativo</option><option>Inativo</option></select></div>
-				  <div class="col-md-4" style="display: block"><select><option></option><option>Morador</option><option>Administrador local</option><option>Administrador do sistema</option></select></div>
-				  <div class="col-md-4" style="visibility: hidden; display: block">.</div>
-				  
-					<div class="container col-md-12" style="visibility: hidden">.</div>
-
-
-				  <button form="buscaTag" class="botao">Gerar</button>
-				  <button form="buscaTag" class="botao-branco" type="reset" name="clear">Limpar</button>
-				  </form>
-			</div>
-
-			<div>
-			    <input type="checkbox" id="plusCli" />
-			    <label class="cli" for="plusCli"></label>
-				<form id ="buscaCli" class="w3-row-padding hide-show">
-			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third ">Apartamento:</p>
+			<form id ="busca" class="w3-row-padding">
+			  <p class="campo col-md-4">Nome:</p><p class="campo col-md-4">Nº da TAG:</p><p class="campo col-md-4">Apartamento:</p>
 			  <br />
-			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="apartamento" class="w3-input campoAp" /></div>
-			  <button form="buscaCli" class="botao">Gerar</button>
-			  <button form="buscaCli" class="botao-branco" type="reset" name="clear">Limpar</button>
-			</form>
-			</div>
-
-			<div>
-			    <input type="checkbox" id="plusAp" />
-			    <label class="App" for="plusAp"></label>
-			<form id ="buscaAp" class="w3-row-padding hide-show">
-			  <p class="campo w3-third">TAG:</p><p class="campo w3-third">Nome do cliente:</p><p class="campo w3-third">Apartamento:</p>
+			  
+				  <div class="col-md-4"><input type="text" name="nome" class="w3-input" /></div>
+				  <div class="col-md-4"><input type="number" name="tag" class="w3-input" /></div>
+				  <div class="col-md-4"><input type="text" name="partamento" class="w3-input" /></div>
+			  
 			  <br />
-			  <div class="w3-third"><input type="number" name="tag" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="nome-cliente" class="w3-input" /></div>
-			  <div class="w3-third"><input type="text" name="apartamento" class="w3-input" /></div>
-			  <button form="buscaCli" class="botao">Gerar</button>
-			  <button form="buscaAp" class="botao-branco" type="reset" name="clear">Limpar</button>
+			  <div class="container col-md-12" style="visibility: hidden">.</div>
+			  <p class="campo col-md-6">Dia do último acesso acesso entre:</p>
+			  <p class="campo col-md-6">Horário do último acesso acesso entre:</p>
+			  <br />
+			  
+			  <div class="col-md-3"><input type="time" name="tempoMenor" class=""></div>
+			  <div class="col-md-3"><input type="time" name="tempoMaior" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMenor" class=""></div>
+			  <div class="col-md-3"><input type="date" name="diaMaior" class=""></div>
+		  		
+			  <br>
+			  
+			  <input type="submit" class="botao" value="Gerar">
+			  <button form="busca" class="botao-branco" type="reset">Limpar</button>
+			  
 			</form>
-			</div>
+		
+			<br />
+			
+				<table class="table table-striped">
+			    <thead>
+			      <tr>
+			      	<th></th>
+			        <th>Nome</th>
+			        <th>Apartamento</th>
+			        <th>Tag</th>
+			        <th colspan=2>Último Acesso</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			      	<td></td>
+			        <td class=""><a href="detalhes cliente.html">Paulo Brandão</a></td>
+			        <td class=""><a href="detalhes ap.html">A102</a></td>
+			        <td class=""><a href="detalhes tag.html">603.409.257</a></td>
+			        <td class="">17/04/2015</td>
+			        <td class="">17:43</td>
+			      </tr>
+			      <tr>
+			   		<td></td>
+			        <td class=""><a href="detalhes cliente.html">Paulo Brandão</a></td>
+			        <td class=""><a href="detalhes ap.html">A102</a></td>
+			        <td class=""><a href="detalhes tag.html">603.409.257</a></td>
+			        <td class="">17/04/2015</td>
+			        <td class="">17:43</td>
+			      </tr>
+			      <tr>
+			        
+			        <td></td><td class=""><a href="detalhes cliente.html">Paulo Brandão</a></td>
+			        <td class=""><a href="detalhes ap.html">A102</a></td>
+			        <td class=""><a href="detalhes tag.html">603.409.257</a></td>
+			        <td class="">17/04/2015</td>
+			        <td class="">17:43</td>
+			      </tr>
+				  <tr>
+			        <td class="">Total</td>
+			        <td class=""></td>
+			        <td class=""></td>
+			        <td class=""></td>
+			        <td class=""></td>
+			      </tr>
+
+			    </tbody>
+			  </table>
+			
+		</div>
+	</div>
 
 </body>
