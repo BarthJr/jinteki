@@ -37,26 +37,23 @@
 
 	<div class="container">
 
-		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a class="active">Criar Cliente</a></h3>
-
+		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a class="active">Criar Morador</a></h3>
+		<?php ValidateFormDweller() ?>
+		<form action="criar_cliente.php" method="post" id="form_cli">
 		<div class="meio">
 
 			<div class="titulo-detalhes">Nome: </div> 
-				<input class="w3-input inline " style="width:280px" type="text" name="nome" value="">
+				<input class="w3-input inline " style="width:280px" type="text" name="nm_morador" value="<?php echo GetPost('nm_morador'); ?>">
 			<br />
 
 			<div class="titulo-detalhes">Apartamento: </div> 
-			<select class="inline">
+			<select name="ap" class="inline">
 			<option value=""></option>
 			<?php
 			  $dataAP=DBRead('Apartamento as a','','a.CodAp,a.NomeAp');
-			  foreach ($dataAP as $res) {
-
-			?>
-			  <option value="echo $res['CodAp']"><?php echo $res['NomeAp'];?></option>
-			  <?php
-				}
-			?>
+			  foreach ($dataAP as $res): ?>
+			  	<option value="<?php echo $res['CodAp'] ?>"><?php echo $res['NomeAp'];?></option>
+			  <?php endForEach;	?>
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">TAGs: </div> <br />
@@ -65,12 +62,12 @@
 					<div class="row">
 				        <div class="control-group" id="fields">
 				            <div class="controls"> 
-				                <form role="form" autocomplete="off">
+				                <form role="form" autocomplete="off" id="alt">
 				                    <div class="entry input-group col-xs-3">
-				                        	
 
+				                    
 				                        <select>
-				                        	<option class="form-control " name="fields[]" value="PEGA DO BANCO">PEGA DO BANCO</option>
+				                        	<option class="form-control " name="fields" value="PEGA DO BANCO">PEGA DO BANCO</option>
 				                        </select>
 
 				                    	<span class="input-group-btn">
@@ -86,26 +83,26 @@
 					</div>
 				</div>
 			<div class="titulo-detalhes">Telefone 1: </div> 
-				<input class="w3-input inline campoTelefone" style="width:130px" type="text" name="telefone1" value="">
+				<input class="w3-input inline campoTelefone" style="width:130px" type="text" name="tel1" value="<?php echo GetPost('tel1'); ?>">
 			<br />
 
 			<div class="titulo-detalhes">Telefone 2: </div> 
-				<input class="w3-input inline campoTelefone" style="width:130px" type="text" name= "telefone2" value="">
+				<input class="w3-input inline campoTelefone" style="width:130px" type="text" name= "tel2" value="<?php echo GetPost('tel2'); ?>">
 			<br />
 
 			<div class="titulo-detalhes">Email: </div> 
-				<input class="w3-input inline" style="width:230px" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="">
+				<input class="w3-input inline" style="width:230px" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo GetPost('email'); ?>">
 			<br />
 
 			<div class="titulo-detalhes">RG: </div> 
-				<input class="w3-input inline" style="width:110px"  type="text" name= "rg" id="RG" value="">
+				<input class="w3-input inline" style="width:110px"  type="text" name= "rg" id="RG" value="<?php echo GetPost('rg'); ?>">
 			<br />
 
 			<div class="titulo-detalhes">CPF: </div> 
-				<input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="">
+				<input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="<?php echo GetPost('cpf'); ?>">
 			<br /><br />
 			  
-			  <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;"></FORM>
+			  <INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;">
 			  <a type="button" class="botao" data-toggle="modal" data-target="#modalCriar">Criar</a>
 		</div>
 	</div>
@@ -123,11 +120,13 @@
 	        <div class="modal-body">
 	          <p class="vertical-center">Salvar o novo registro no banco de dados?</p>
 	          <button type="button" class="btn btn-default left-2" data-dismiss="modal">Cancelar</button>
-	          <button class="btn btn-default right-2" type="submit">Salvar</button>
+	          
+	          <input class="btn btn-default right-2" type="submit" form="form_cli" name="send" value="Salvar"></input>
 	        </div>
 	      </div>      
    		</div>
    	</div>
+   	</form>
 
 
 <script>
