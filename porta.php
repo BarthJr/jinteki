@@ -20,14 +20,35 @@
 <body>
 	
 	<div class="container">
-		<div class="col-md-6">
-			<form>
-				<input type="number" name="tagIn" placeholder="TAG" />
-			</form>
+		<div class="col-sm-6 flex">
+			<div class="vertical-center">
+				<form id="portaForm">
+				
+					<input class="form-control campoTag" name="fields[]" type="text" form="portaForm" type="number" name="tagNova" placeholder="TAG" />
+					<div class="master"> <!-- Remover a classe "master" se a tag digitada for a master-->
+						<br />
+						<p>Tag master inserida!</p><br />
+						<p>Digite a nova TAG:</p><br />
+						<input class="form-control campoTag" name="fields[]" type="text" form="portaForm" type="number" name="tagNova" placeholder="TAG nova" />
+					</div>				
+				</form>
+				<div class="alert alert-danger vis-none"> <!-- remover a classe vis-none se a tag digitada não existir, ou se não tiver permissão ce acesso -->
+					<p>Erro! Tag não existe, ou permissão de acesso negado.</p>
+				</div>
+				<div class="alert alert-success vis-none"> <!-- remover a classe vis-none se a tag estiver no sistema e tiver permissão de acesso nesse horário -->
+					<p>Entrada permitida!</p>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-6">
-			<img src="imagens/porta_fechada.jpg" />
+		<div class="col-sm-6">
+			<img class="porta" src="imagens/porta_fechada.jpg" /> <!-- mudar para porta_aberta.jpg se a tag digitada estiver no sistema e tiver permissão de acesso nesse horário-->
 		</div>
+
+<script>
+jQuery(function($){
+       $(".campoTag").mask("999.999.999");
+});
+</script>
 
 </body>
 </html>

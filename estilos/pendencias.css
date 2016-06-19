@@ -28,3 +28,24 @@
 	padding-top: 9px;
 	padding-bottom: 9px;
 }
+
+.porta {
+	height: 500px;
+}
+
+.flex {         /* center items horizontally, in this case */
+    height: 500px;
+}
+
+.vertical-center {
+	padding-top: 40%;
+    text-align: center;
+}
+
+.master {
+	visibility: hidden;
+}
+
+.vis-none {
+	display: none;
+}
