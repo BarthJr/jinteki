@@ -28,7 +28,9 @@
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
   <link rel="stylesheet" href="estilos/pendencias.css" /> 
-  
+
+
+ 
 </head>
 
 <body>
@@ -73,15 +75,45 @@
 			<?php endForEach; ?>  
 			</select>
 			<br /><br />
-			<div class="titulo-detalhes">Permissão de acesso: </div> 
-			<select name="HrAcess" class="inline">
-			  <option value=""></option>
-			  <option value="A102">Todos os horários</option>
-			  <option value="A103">Horário comercial</option>
-			  <option value="A104">Nenhum</option>
-			</select>
+			<div class="titulo-detalhes">Permissão de acesso: </div>
+				<div class="meio">	
+					<h5>Em que dias da semana a TAG terá permissão de entrar no apartamento?</h5>
+					<form action="">
+						<input type="checkbox" name="diaSemana" value="segunda">Segunda-feira<br>
+						<input type="checkbox" name="diaSemana" value="terca">Terça-feira<br>
+						<input type="checkbox" name="diaSemana" value="quarta">Quarta-feira<br>
+						<input type="checkbox" name="diaSemana" value="quinta">Quinta-feira<br>
+						<input type="checkbox" name="diaSemana" value="sexta">Sexta-feira<br>
+						<input type="checkbox" name="diaSemana" value="sabado">Sábado<br>
+						<input type="checkbox" name="diaSemana" value="domingo">Domingo<br>
+						<br><br>
+						<div class="col-md-12">
+							<p>A partir de que dia a TAG poderá entrar no apartamento?</p><br />
+							<input type="date" name="inicioPermissao" />
+						</div>
+
+						<div class="col-md-12">
+							<br><p>Até que dia a TAG poderá entrar no apartamento? </p><br />
+							<input type="date" name="fimPermissao" />
+						</div>
+
+						
+						<div class="col-md-12">
+						<br>	<p>A partir de que horário a TAG poderá entrar no apartamento?</p><br />
+							<input type="time" name="inicioHoraPermissao" />
+						</div>
+
+						<div class="col-md-12">
+							<br><p>Até que horário a TAG poderá entrar no apartamento? </p><br />
+							<input type="time" name="fimHoraPermissao" />
+						</div>
+					</form>
+					.
+				</div>
+
 			<br /><br />
 			<div class="titulo-detalhes">Permissões: </div> 
+
 			<select name="perm" class="inline">
 			  <option value=""></option>
 			  <option value="1">Morador</option>
