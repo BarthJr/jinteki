@@ -65,11 +65,9 @@
 				                <form role="form" autocomplete="off" id="alt">
 				                    <div class="entry input-group col-xs-3">
 
-				                    
 				                        <select>
 				                        	<option class="form-control " name="fields" value="PEGA DO BANCO">PEGA DO BANCO</option>
 				                        </select>
-
 				                    	<span class="input-group-btn">
 				                            <button class="btn btn-success btn-add" type="button">
 				                                <span class="glyphicon glyphicon-plus"></span>

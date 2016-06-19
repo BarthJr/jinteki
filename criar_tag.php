@@ -33,11 +33,17 @@
 
 <body>
 
+
+
+	
+
 	<iframe src="navbar.php" style=" margin-top: 10px; border: none; height: 70px; width: 100%"></iframe>
 
 	<?php ValidateFormTag();?>
-	<form action="criar_tag.php" method="post" id="alg"> dghnkldgfln
+	<form action="criar_tag.php" method="post" id="alg">
 	<div class="risco"></div>
+	
+
 	<div class="container">
 
 		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a href="tags.php">TAGs</a>><a class="active">Criar TAG</a></h3>
