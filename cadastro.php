@@ -75,6 +75,14 @@
         <input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="" required>
         <br><br>
 
+      <div class="titulo-detalhes">Senha*: </div> 
+        <input class="w3-input inline" style="width:180px"  type="password" name= "senha" id="senha" value="" required>
+        <br><br>
+
+      <div class="titulo-detalhes">Confirmação de senha*: </div> 
+        <input class="w3-input inline" style="width:180px"  type="password" name= "confSenha" id="confSenha" value="" required>
+        <br><br>
+
         
       </form>
       <FORM class="inline"><INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;" /></FORM>
