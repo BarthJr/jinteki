@@ -96,7 +96,7 @@
 			     <?php } ?>
 			    </tbody>
 			  </table>
-			  <a class="botao" href="criar_cliente.php">Criar Cliente</a>
+			  <a class="botao" href="criar_cliente.php">Criar Morador</a>
 			  <br /><br />
 			
 		</div>
