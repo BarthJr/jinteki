@@ -27,7 +27,7 @@
 				<li><a href="apartamentos.php">Apartamentos</a></li>
 				<li><a href="clientes.php">Moradores</a></li>
 				<li><a href="tags.php">TAGs</a></li>
-				<li><a href="relatorios.php">Relatórios</a></li>
+				<li><a href="relatorio2.php">Relatórios</a></li>
 				<li><a href="pendencias.php">Pendências</a></li>
 				<li><a href="movimentacoes.php" class="">Movimentação</a></li>
 				<li><a href="#"><img class="icon" src="imagens/sair.jpg" /></a></li>
