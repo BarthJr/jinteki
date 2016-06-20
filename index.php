@@ -30,7 +30,11 @@
   <script src="center.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Passion+One:400,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="estilos/signin.css" />
+  <link rel="stylesheet" href="estilos/movimentacao.css" />
+  <link rel="stylesheet" href="estilos/detalhes.css" />
+  <link rel="stylesheet" href="estilos/pendencias.css" /> 
 </head>
+
 <body>
 
 <nav class="navbar navbar-default">
@@ -68,12 +72,13 @@
 			<div class="nome">
 		        <h2 class="form-signin-heading">Login</h2>
 		        <label for="inputTag" class="sr-only ">TAG</label>
-		        <input type="text" id="inputTag" class="form-control campoTag" placeholder="TAG" required="" autofocus="">
 		        <label for="inputPassword" class="sr-only">SENHA</label>
-		        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required="">
-
-		        <a class="btn btn-lg btn-primary btn-block" id="branco" href="movimentacoes.php" type="submit">Entrar</a>
-		    	
+		        <form id="login" method="get" action="">
+			        <input type="text" id="inputTag" class="form-control campoTag" placeholder="TAG" form="login" method="" required="" autofocus="">
+			        
+			        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" form="login" method="" required="">
+					<input type="submit" name="enviar" value="Entrar" class="botao" form="login">
+		    	</form>
 		    	<a type="button" class="left" data-toggle="modal" data-target="#modalSenha">Esqueceu sua senha?</a>
 		    	<a class="right" href="cadastro.php">CADASTRE-SE</a>
 		    </div>
