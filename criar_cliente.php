@@ -24,6 +24,7 @@
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/center.js"></script>
   <script src="scripts/jquery.maskedinput.min.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilos/signin.css" />
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
@@ -43,7 +44,7 @@
 		<div class="meio">
 
 			<div class="titulo-detalhes">Nome: </div> 
-				<input class="w3-input inline " style="width:280px" type="text" name="nm_morador" value="<?php echo GetPost('nm_morador'); ?>">
+				<input class="w3-input inline " style="width:280px" type="text" name="nm_morador" form="form_cli" value="<?php echo GetPost('nm_morador'); ?> " data-validation="required" />
 			<br />
 
 			<div class="titulo-detalhes">Apartamento: </div> 
@@ -65,7 +66,7 @@
 				                    <div class="entry input-group col-xs-3">
 
 
-				                        <select class="form-control" name= "fields">
+				                        <select class="form-control" name= "fields" form="form_cli">
 				                        	<?php
 												$dataM=DBRead('TAG as t','WHERE t.CodMorador is NULL AND t.Estado = 1 ORDER BY t.NumTag','t.CodMorador,t.NumTag');
 											  	foreach ($dataM as $res) : ?>
@@ -94,7 +95,7 @@
 			<br />
 
 			<div class="titulo-detalhes">Email: </div> 
-				<input class="w3-input inline" style="width:230px" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo GetPost('email'); ?>">
+				<input class="w3-input inline" style="width:230px" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo GetPost('email'); ?>"  data-validation="email">
 			<br />
 
 			<div class="titulo-detalhes">RG: </div> 
@@ -102,7 +103,7 @@
 			<br />
 
 			<div class="titulo-detalhes">CPF: </div> 
-				<input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="<?php echo GetPost('cpf'); ?>">
+				<input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPpF" value="<?php echo GetPost('cpf'); ?>" data-validation="cpf">
 			<br /><br />
 			  
 			  <INPUT Type="button" class="botao-branco" VALUE="Voltar" onClick="history.go(-1);return true;">
@@ -159,11 +160,17 @@ $(function()
 </script>
 
 <script>
-/*jQuery(function($){
+jQuery(function($){
        $(".campoTelefone").mask("(99) 9999-9999");
        $("#CPF").mask("999.999.999-99");
        $(".campoTag").mask("999.999.999");
-}); */
+});
+
+</script>
+<script>
+  $.validate({
+    modules : 'brazil'
+  });
 </script>
 	
 
