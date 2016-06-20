@@ -8,7 +8,7 @@
 
 	Init(); 
 
-
+	//Cria Tag
 	function ValidateFormTag(){
 		if(GetPost('send')){
 			$nm_tag=GetPost('nm_tag');
@@ -37,18 +37,20 @@
 
 		}
 	}
+
+	// Altera TAG
 	function UpdateFormTag(){
 		if(GetPost('send')){
 			$estado=GetPost('estado');
-			$ap=GetPost('ap');
 			$morador=GetPost('morador');
 			$perm=GetPost('perm');
-			var_dump($estado,$ap,$morador,$perm);
+			$tag= GetPost('tag');
+			var_dump($estado,$morador,$perm,$tag);
 
-			$update_tag=RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf);
+			$update_tag=UpdateTag($estado,$morador,$perm,$tag);
 
 		}
-	}
+	} 
 	//Busca na pagina de acordo com os campos digitados
 	function Buscar(){
 		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";

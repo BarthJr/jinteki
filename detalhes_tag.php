@@ -14,8 +14,10 @@
 	$key= $_GET['userkey'];
 				$data=DBRead('TAG as t, Apartamento as a, Morador as m',"WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND t.NumTag = '$key'","t.Estado, a.NomeAp, m.Nome, t.UltAcesso, t.CodAntigoM");
 				$AuxData=$data[0];
-				$data1=DBRead('TAG as t, Morador as m',"WHERE t.CodAntigoM = m.CodMorador","m.Nome");
+				$data1=DBRead('TAG as t, Morador as m',"WHERE t.CodAntigoM = m.CodMorador","m.Nome, m.CodMorador");
 				$AntigoM=$data1[0];
+				$auxM=$data1[0]['CodMorador'];
+				var_dump($AntigoM);
 
 
 ?>
@@ -46,17 +48,17 @@
 
 		<div class="meio">
 			
-			  <div class="titulo-detalhes">Situação: </div> <p><?php echo $data[0]['Estado']?></p> <br />
+			  <div class="titulo-detalhes">Situação: </div> <p><?php if($data[0]['Estado'] ==1) echo "Ativa"; else echo "Inativa";?></p> <br />
 
 			  <div class="titulo-detalhes">Apartamento: </div><a href="<?php echo URL_DETALHES_AP."?userkey=$AuxData[NomeAp]" ?>"><?php echo $data[0]['NomeAp']?></a> <br />
 
-			  <div class="titulo-detalhes">Cliente: </div> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$AuxData[Nome]" ?>"><?php echo $data[0]['Nome']?></a><br />
+			  <div class="titulo-detalhes">Morador: </div> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$AuxData[Nome]" ?>"><?php echo $data[0]['Nome']?></a><br />
 
 			  <div class="titulo-detalhes">Permissão de acesso: </div> <p>Todos os horários</p><br />
 
 			  <div class="titulo-detalhes">Último acesso: </div> <p><?php if($data[0]['UltAcesso']) echo date("d/m/Y",$data[0]['UltAcesso']);?></p><br />
 
-			  <div class="titulo-detalhes">Último dono: </div> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$AntigoM" ?>"><?php echo $data[0]['CodAntigoM']?></a><br />
+			  <div class="titulo-detalhes">Último dono: </div> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$AntigoM[Nome]" ?>"><?php echo $AntigoM['Nome'];?></a><br />
 			  <br />
 			
 			  

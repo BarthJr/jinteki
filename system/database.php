@@ -92,10 +92,31 @@
 
 
 	}
+	//Registra TAG
 	function RegisterTag($nm_tag,$active,$cod_morador,$perm){
 
-		$query = "INSERT INTO TAG(NumTag, Estado, CodMorador, CodPermissao) VALUES ('$nm_tag', '$active', '$cod_morador', '$perm')";
+		if($cod_morador)
+			$query = "INSERT INTO TAG(NumTag, Estado, CodMorador, CodPermissao) VALUES ('$nm_tag', '$active', '$cod_morador', '$perm')";
+		else
+			$query = "INSERT INTO TAG(NumTag, Estado, CodPermissao) VALUES ('$nm_tag', '$active', '$perm')";
 		return DBExecute($query);
+	}
+
+	function UpdateTag($estado,$morador,$perm,$tag){
+		if($morador){
+			$query1="SELECT t.CodMorador FROM TAG as t WHERE t.NumTag = '$tag'";
+			$dt=DBRead1($query1);
+			$aux=$dt[0]['CodMorador'];
+			$query = "UPDATE TAG as t SET t.Estado='$estado',t.CodMorador='$morador', t.CodPermissao='$perm', t.CodAntigoM=$aux WHERE t.NumTag = '$tag'";
+		}
+		else{
+			$query1="SELECT t.CodMorador FROM TAG as t WHERE t.NumTag = '$tag'";
+			$dt=DBRead1($query1);
+			$aux=$dt[0]['CodMorador'];
+			$query = "UPDATE TAG as t SET t.Estado='$estado',t.CodMorador=NULL, t.CodPermissao='$perm', t.CodAntigoM=$aux WHERE t.NumTag = '$tag';";
+		}
+		DBExecute($query);
+
 	}
 	function RegisterDweller($nm_morador,$ap,$nm_tag,$tel1,$tel2,$email,$rg,$cpf){
 		$query = "INSERT INTO Morador(Nome,CodApartamento,Email,RG,CPF) VALUES ('$nm_morador','$ap','$email','$rg','$cpf')";

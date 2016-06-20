@@ -39,6 +39,7 @@
 
 <?php UpdateFormTag();?>
 <form action="alterar_tag.php" method="post" id="envio">
+	<input type="hidden" name="tag" value="<?php echo $_GET['userkey'] ?>" >
 	<div class="container">
 
 		<h3 class="titulo"><a href="movimentacao.html">Home</a>><a href="tags.php">TAGs</a>><a class="active"><?php echo $key?></a></h3>
@@ -50,39 +51,19 @@
 			  	<?php if($dataAux['Estado']==1)
 			  		echo "selected='selected'";
 			  	?>
-			  >Ativo</option>
+			  >Ativa</option>
 			  <option value="0"
 			  	<?php if($dataAux['Estado']==0)
 			  		echo "selected='selected'";
 			  	?>
-			  >Inativo</option>
+			  >Inativa</option>
 			</select>
-			<br /><br />
-			<div class="titulo-detalhes">Apartamento: </div> 
-			<select name= "ap" class="inline">
-			<?php
-			  $dataAP=DBRead('Apartamento as a','','a.CodAp,a.NomeAp');
-			  foreach ($dataAP as $res) {
-
-			?>
-			  <option value=" <?php echo $res['CodAp'] ?> "
-			  	<?php if($dataAux['NomeAp'] == $res['NomeAp'])
-			    		echo "selected='selected'"
-			    	?>
-			  > <?php echo $res['NomeAp'];?>	
-			  </option>
-
-			  <!--<option value="A102">A102</option>
-			  <option value="A103">A103</option>
-			  <option value="A104">A104</option> -->
-
-			<?php
-				}
-			?>
-			</select>
+			
+	
 			<br /><br />
 			<div class="titulo-detalhes">Morador: </div> 
 			<select name= "morador" class="inline">
+				<option value=""></option>
 			  <?php
 				$dataM=DBRead('Morador as m','','m.CodMorador,m.Nome');
 			  	foreach ($dataM as $res) {

@@ -13,6 +13,7 @@
 	//$dataUser = GetUser();
 ?>
 <!DOCTYPE html>
+<!--Cannot add or update a child row: a foreign key constraint fails (`Jinteki`.`TAG`, CONSTRAINT `fk_MoradorTAG` FOREIGN KEY (`CodMorador`) REFERENCES `Morador` (`CodMorador`)) -->
 <html>
 <head>
 	<title>Jinteki - Criar TAG</title>
@@ -58,7 +59,6 @@
 			<br /><br />
 			<div class="titulo-detalhes">Situação: </div> 
 			<select name="active" class="inline">
-			  <option value=""></option>
 			  <option value="1">Ativo</option>
 			  <option value="0">Inativo</option>
 			</select>
@@ -66,10 +66,10 @@
 			
 			<div class="titulo-detalhes">Morador: </div> 
 			<select name="cod_morador" class="inline">
-			<option value=""></option>
+			<option value="0"></option>
 			<?php
 				$dataM=DBRead('Morador as m','ORDER BY m.Nome','m.CodMorador,m.Nome');
-			  	foreach ($dataM as $res) : ?>
+			  	foreach ($dataM as $res) : var_dump($res);?>
 			  		<option value="<?php echo $res['CodMorador'] ?> "><?php echo $res['Nome'];?></option>
 			<?php endForEach; ?>  
 			</select>
@@ -114,7 +114,6 @@
 			<div class="titulo-detalhes">Permissões: </div> 
 
 			<select name="perm" class="inline">
-			  <option value=""></option>
 			  <option value="1">Morador</option>
 			  <option value="2">Administrador do apartamento</option>
 			  <option value="3">Administrador do sistema</option>
