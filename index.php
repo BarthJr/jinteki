@@ -73,12 +73,13 @@
 		        <h2 class="form-signin-heading">Login</h2>
 		        <label for="inputTag" class="sr-only ">TAG</label>
 		        <label for="inputPassword" class="sr-only">SENHA</label>
-		        <form id="login" method="get" action="">
-			        <input type="text" id="inputTag" class="form-control campoTag" placeholder="TAG" form="login" method="" required="" autofocus="">
-			        
-			        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" form="login" method="" required="">
-					<input type="submit" name="enviar" value="Entrar" class="botao" form="login">
-		    	</form>
+		        <form>
+				  <input type="text" name="tag" placeholder="TAG" class="form-control campoTag">
+				 
+				  <input type="password" name="senha" placeholder="Senha" class="form-control">
+				  <input type="submit" value="Entrar" class="botao direita">
+				</form>
+
 		    	<a type="button" class="left" data-toggle="modal" data-target="#modalSenha">Esqueceu sua senha?</a>
 		    	<a class="right" href="cadastro.php">CADASTRE-SE</a>
 		    </div>
@@ -107,9 +108,9 @@
    	</div>
   </div>
 <script>
-jQuery(function($){
+/*jQuery(function($){
        $(".campoTag").mask("999.999.999");
-});
+}); */
 
 </script>
 
