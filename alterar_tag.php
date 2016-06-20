@@ -8,7 +8,7 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
 	$key= $_GET['userkey'];
-	$data= DBRead("TAG as t, Morador as m, Apartamento as a","WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND t.NumTag = '$key' ORDER BY m.Nome","t.Estado, a.NomeAp, m.Nome, t.CodPermissao");
+	$data= DBRead("TAG as t, Morador as m, Apartamento as a","WHERE t.CodMorador = m.CPF AND m.CodApartamento = a.CodAp AND t.NumTag = '$key' ORDER BY m.Nome","t.Estado, a.NomeAp, m.Nome, t.CodPermissao");
 	$dataAux= $data[0];
 	
 
@@ -42,7 +42,7 @@
 	<input type="hidden" name="tag" value="<?php echo $_GET['userkey'] ?>" >
 	<div class="container">
 
-		<h3 class="titulo"><a href="movimentacao.html">Home</a>><a href="tags.php">TAGs</a>><a class="active"><?php echo $key?></a></h3>
+		<h3 class="titulo"><a href="movimentacoes.php">Home</a>><a href="tags.php">TAGs</a>><a class="active"><?php echo $key?></a></h3>
 
 		<div class="meio">
 			<div class="titulo-detalhes">Situação: </div> 
@@ -65,11 +65,11 @@
 			<select name= "morador" class="inline">
 				<option value=""></option>
 			  <?php
-				$dataM=DBRead('Morador as m','','m.CodMorador,m.Nome');
+				$dataM=DBRead('Morador as m','','m.CPF,m.Nome');
 			  	foreach ($dataM as $res) {
 
 			  ?>	
-			    <option value="<?php echo $res['CodMorador'] ?>"
+			    <option value="<?php echo $res['CPF'] ?>"
 			    	<?php if($dataAux['Nome'] == $res['Nome'])
 			    		echo "selected='selected'"
 			    	?>

@@ -67,7 +67,7 @@
 			    </thead>
 			    <tbody>
 			    <?php
-			    	$query="SELECT t.NumTag, a.NomeAp, m.Nome, t.Estado, t.CodPermissao FROM TAG t LEFT JOIN Morador m ON t.CodMorador = m.CodMorador LEFT JOIN Apartamento a ON m.CodApartamento = a.CodAp ORDER BY t.NumTag";
+			    	$query="SELECT t.NumTag, a.NomeAp, m.Nome, t.Estado, t.CodPermissao FROM TAG t LEFT JOIN Morador m ON t.CodMorador = m.CPF LEFT JOIN Apartamento a ON m.CodApartamento = a.CodAp ORDER BY t.NumTag";
 			    	$data1= DBRead1($query);
 			    	foreach ($data1 as $res) {
 			    ?>

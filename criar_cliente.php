@@ -48,7 +48,6 @@
 
 			<div class="titulo-detalhes">Apartamento: </div> 
 			<select name="ap" class="inline">
-			<option value=""></option>
 			<?php
 			  $dataAP=DBRead('Apartamento as a','ORDER BY a.NomeAp','a.CodAp,a.NomeAp');
 			  foreach ($dataAP as $res): ?>
@@ -67,7 +66,6 @@
 
 
 				                        <select class="form-control" name= "fields">
-				                        	<option value=""></option>
 				                        	<?php
 												$dataM=DBRead('TAG as t','WHERE t.CodMorador is NULL AND t.Estado = 1 ORDER BY t.NumTag','t.CodMorador,t.NumTag');
 											  	foreach ($dataM as $res) : ?>

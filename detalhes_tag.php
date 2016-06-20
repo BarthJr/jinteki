@@ -12,13 +12,12 @@
 	//$dataUser = GetUser();
 
 	$key= $_GET['userkey'];
-				$data=DBRead('TAG as t, Apartamento as a, Morador as m',"WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND t.NumTag = '$key'","t.Estado, a.NomeAp, m.Nome, t.UltAcesso, t.CodAntigoM, t.CodPermissao");
+				$data=DBRead('TAG as t, Apartamento as a, Morador as m, Historico as h',"WHERE t.CodMorador = m.CPF AND m.CodApartamento = a.CodAp AND t.NumTag = '$key'","t.Estado, a.NomeAp, m.Nome, t.CodAntigoM, t.CodPermissao , h.DtEntrada, h.HrEntrada");
 				$AuxData=$data[0];
-				$data1=DBRead('TAG as t, Morador as m',"WHERE t.CodAntigoM = m.CodMorador","m.Nome, m.CodMorador");
+				$data1=DBRead('TAG as t, Morador as m',"WHERE t.CodAntigoM = m.CPF","m.Nome, m.CPF");
 				$AntigoM=$data1[0];
-				$auxM=$data1[0]['CodMorador'];
-				var_dump($AuxData);
-
+				$auxM=$data1[0]['CPF'];
+				
 
 ?>
 <!DOCTYPE html>
@@ -58,7 +57,7 @@
 
 			  <div class="titulo-detalhes">Nivel de Acesso: </div> <p><?php if($data[0]['CodPermissao'] == 3) echo "Administrador do Sistema"; elseif($data[0]['CodPermissao'] ==2) echo "Administrador do Apartamento"; else echo "Morador"; ?></p><br />
 
-			  <div class="titulo-detalhes">Último acesso: </div> <p><?php if($data[0]['UltAcesso']) echo date("d/m/Y",$data[0]['UltAcesso']);?></p><br />
+			  <div class="titulo-detalhes">Último acesso: </div> <p><?php if($data[0]['DtEntrada']) echo date_format(new DateTime($res['DtEntrada']), "d/m/Y");?></p><br />
 
 			  <div class="titulo-detalhes">Último dono: </div> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$AntigoM[Nome]" ?>"><?php echo $AntigoM['Nome'];?></a><br />
 			  <br />

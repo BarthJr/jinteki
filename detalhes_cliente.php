@@ -13,7 +13,7 @@
 	//$dataUser = GetUser();
 
 	$key= $_GET['userkey'];
-				$data=DBRead('TAG as t, Apartamento as a, Morador as m, Telefone as tel',"WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND m.CodMorador = tel.CodMorador AND m.Nome = '$key'","a.NomeAp, t.NumTag, tel.NumTel, t.UltAcesso,t.CodAntigoM");
+				$data=DBRead('TAG as t, Apartamento as a, Morador as m, Historico as h, Telefone as tel',"WHERE t.CodMorador = m.CPF AND m.CodApartamento = a.CodAp AND m.CPF = tel.CodMorador AND m.Nome = '$key'","a.NomeAp, t.NumTag, tel.NumTel, h.DtEntrada,t.CodAntigoM");
 				$AuxData=$data[0];
 				//var_dump($DataTel);
 				
@@ -53,7 +53,7 @@
 			  <div class="titulo-detalhes">TAGs: </div><a href="<?php echo URL_DETALHES_TAG."?userkey=$AuxData[NumTag]" ?>"<?php echo $data[0]['Nome']?>"><?php echo $data[0]['NumTag']?></a> <br />
 
 			  <?php
-			  	$DataTel=DBRead('Morador as m, Telefone as tel',"WHERE m.CodMorador = tel.CodMorador AND m.Nome = '$key' LIMIT 2","tel.NumTel");
+			  	$DataTel=DBRead('Morador as m, Telefone as tel',"WHERE m.CPF = tel.CodMorador AND m.Nome = '$key' LIMIT 2","tel.NumTel");
 			  	$count=1;
 			  	foreach ($DataTel as $res) {
 			  ?>
@@ -68,7 +68,7 @@
 
 			  <div class="titulo-detalhes">Permissão de acesso: </div> <p>Todos os horários</p><br />
 
-			  <div class="titulo-detalhes">Último acesso: </div> <p><?php echo date("d/m/Y",$data[0]['UltAcesso'])?></p><br />
+			  <div class="titulo-detalhes">Último acesso: </div> <p><?php echo date_format(new DateTime($data[0]['DtEntrada']), "d/m/Y");?></p><br />
 
 			  <div class="titulo-detalhes">Último dono: </div> <a href="detalhes cliente.html"><?php echo $data[0]['CodAntigoM']?></a><br />
 			  <br />

@@ -82,7 +82,7 @@
 			    	//$query"SELECT m.CodMorador FROM Morador as m"; 
 			    	//$query="SELECT t.NumTag, a.NomeAp,m.Nome, m.CodMorador FROM TAG t LEFT JOIN Morador m ON t.CodMorador = m.CodMorador LEFT JOIN Apartamento a ON m.CodApartamento = a.CodAp ORDER BY t.NumTag";
 			    	//$data1= DBRead1($query);
-			    	$data1=DBRead("Morador as m, Apartamento as a",'WHERE m.CodApartamento = a.CodAp ORDER BY m.Nome','m.Nome, a.NomeAp, m.CPF, m.Email, m.CodMorador');
+			    	$data1=DBRead("Morador as m, Apartamento as a",'WHERE m.CodApartamento = a.CodAp ORDER BY m.Nome','m.Nome, a.NomeAp, m.CPF, m.Email, m.CPF');
 			    	//var_dump($data1);
 			    	foreach ($data1 as $res) {
 
@@ -101,7 +101,7 @@
 			      		<?php echo $res['CPF']?>
 			      	</td>
 			      				      	
-			      	<td class="campoTelefone"> <?php $dados = DBRead("Telefone as tel","WHERE tel.CodMorador = '$res[CodMorador]' ",'tel.NumTel'); echo $dados[0]['NumTel']; ?> </td>
+			      	<td class="campoTelefone"> <?php $dados = DBRead("Telefone as tel","WHERE tel.CodMorador = '$res[CPF]' ",'tel.NumTel'); echo $dados[0]['NumTel']; ?> </td>
 			      	<td><?php echo $res['Email']?></td>
 
 			      </tr>

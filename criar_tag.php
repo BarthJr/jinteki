@@ -68,9 +68,9 @@
 			<select name="cod_morador" class="inline">
 			<option value="0"></option>
 			<?php
-				$dataM=DBRead('Morador as m','ORDER BY m.Nome','m.CodMorador,m.Nome');
+				$dataM=DBRead('Morador as m','ORDER BY m.Nome','m.CPF,m.Nome');
 			  	foreach ($dataM as $res) : var_dump($res);?>
-			  		<option value="<?php echo $res['CodMorador'] ?> "><?php echo $res['Nome'];?></option>
+			  		<option value="<?php echo $res['CPF'] ?> "><?php echo $res['Nome'];?></option>
 			<?php endForEach; ?>  
 			</select>
 			<br /><br />

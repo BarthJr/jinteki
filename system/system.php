@@ -53,7 +53,7 @@
 	} 
 	//Busca na pagina de acordo com os campos digitados
 	function Buscar(){
-		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
+		$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CPF";
 		if(GetPost('send')){
 			$t=GetPost('tag');
 			$nmMorador=GetPost('nome-cliente');
@@ -63,7 +63,7 @@
 			$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
 			$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
 		}
-		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
+		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome");
 		return $data;
 
 	}
@@ -77,7 +77,7 @@
 			$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
 			$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
 		}
-		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
+		$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome");
 		return $data;
 
 	}

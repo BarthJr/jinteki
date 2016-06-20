@@ -12,14 +12,14 @@
 	//$nmMorador='Junior Barth';
 	//$numAP="A002";
 
-	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CodMorador";
+	$query="WHERE a.CodAp = m.CodApartamento AND t.CodMorador = m.CPF AND t.NumTAG = h.NumTAG ORDER BY h.DtEntrada,h.HrEntrada";
 	$query.= ($t) ? " AND NumTAG = '$t'" : '';
 	$query.= ($nmMorador) ? " AND m.Nome = '$nmMorador'" : '';
 	$query.= ($numAP) ? " AND NomeAP = '$numAP'" : '';
 	//$query.="WHERE t.CodApartamento = a.CodAp AND a.CodAp = m.CodApartamento AND m.Nome = 'Junior Barth'";
 
-	$data=DBRead('TAG as t, Apartamento as a, Morador as m',$query,"t.NumTAG, a.NomeAP, m.Nome, t.UltAcesso");
-
+	$data=DBRead('TAG as t, Apartamento as a, Morador as m, Historico as h',$query,"t.NumTAG, a.NomeAP, m.Nome, h.DtEntrada, h.HrEntrada");
+	
 	$dataUser = GetUser();
 ?>
 <!DOCTYPE html>
@@ -100,8 +100,8 @@
 			      	</td>
 			      	<td> <a href="<?php echo URL_DETALHES_MORADOR."?userkey=$res[Nome]" ?>" title="detalhes_nome"><?php echo $res['Nome']  ?></a>
 			      	</td>
-			      	<td> <?php if($res['UltAcesso']) echo date("d/m/Y",$res['UltAcesso']);?> </td>
-			      	<td> <?php if($res['UltAcesso']) echo date("H:i:s",$res['UltAcesso']);  ?> </td>
+			      	<td> <?php if($res['DtEntrada']) echo date_format(new DateTime($res['DtEntrada']), "d/m/Y");?> </td>
+			      	<td> <?php if($res['HrEntrada']) echo date_format(new DateTime($res['HrEntrada']), "H:i:s");?> </td>
 			      </tr>
 			     <?php } ?>
 			    </tbody>

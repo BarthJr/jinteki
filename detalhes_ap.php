@@ -67,7 +67,7 @@
 			  <table class="table table-striped">
 			  <p>
 			  <?php
-				$dataM=DBRead('TAG as t, Morador as m, Apartamento as a',"WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND a.NomeAp = '$key'",'t.NumTAG, m.Nome');
+				$dataM=DBRead('TAG as t, Morador as m, Apartamento as a',"WHERE t.CodMorador = m.CPF AND m.CodApartamento = a.CodAp AND a.NomeAp = '$key'",'t.NumTAG, m.Nome');
 			  	foreach ($dataM as $res) {
 			  ?>
 			  	<a href="<?php echo URL_DETALHES_TAG."?userkey=$res[NumTAG]" ?>"><?php echo $res['NumTAG'];?></a>
@@ -79,7 +79,7 @@
 			  <div class="titulo-detalhes">Administrador: </div> <br />
 
 			  <p>    
-			  	<?php $dt_morador=DBRead('TAG as t, Morador as m, Apartamento as a',"WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND a.NomeAp = '$key' AND t.CodPermissao = 2","m.Nome"); if($dt_morador[0]['Nome'] == NULL) echo "Não possui administrador responsável."; ?>
+			  	<?php $dt_morador=DBRead('TAG as t, Morador as m, Apartamento as a',"WHERE t.CodMorador = m.CPF AND m.CodApartamento = a.CodAp AND a.NomeAp = '$key' AND t.CodPermissao = 2","m.Nome"); if($dt_morador[0]['Nome'] == NULL) echo "Não possui administrador responsável."; ?>
 			  	<a href="detalhes_cliente.php"><?php if($dt_morador[0]['Nome'] <> NULL) echo $dt_morador[0]['Nome']; ?></a><br />
 			  </p> <br />
 			  <br />
