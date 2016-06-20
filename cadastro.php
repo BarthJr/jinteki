@@ -73,11 +73,11 @@
 
       <div class="titulo-detalhes">CPF*: </div> 
         <input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="" required>
-        <br><br>
+        <br>
 
       <div class="titulo-detalhes">Senha*: </div> 
         <input class="w3-input inline" style="width:180px"  type="password" name= "senha" id="senha" value="" required>
-        <br><br>
+        <br>
 
       <div class="titulo-detalhes">Confirmação de senha*: </div> 
         <input class="w3-input inline" style="width:180px"  type="password" name= "confSenha" id="confSenha" value="" required>

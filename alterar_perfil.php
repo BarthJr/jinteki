@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Jinteki - Perfil</title>
+	<title>Jinteki - Alterar Perfil</title>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="estilos/w3.css">
@@ -48,16 +48,72 @@
         <div class="titulo-detalhes">CPF: </div> 
           <input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="55149464953">
         <br /><br />
-          <a class="botao" href="#p">Salvar</a>
+
+        <div class="titulo-detalhes">CPF: </div> 
+          <input class="w3-input inline" style="width:120px"  type="text" name= "cpf" id="CPF" value="55149464953">
+        <br />
+
+        <div class="titulo-detalhes">Nova senha: </div> 
+          <input class="w3-input inline" style="width:180px"  type="password" name= "novaSenha" id="novaSenha" value="" required>
+        <br>
+
+        <div class="titulo-detalhes">Confirmação da senha nova: </div> 
+          <input class="w3-input inline" style="width:180px"  type="password" name= "confSenhaNova" id="confSenhaNova" value="" required>
+        <br>
+
+        <div class="titulo-detalhes">Senha atual: </div> 
+          <input class="w3-input inline" style="width:180px"  type="password" name= "senhaAtual" id="senhaAtual" value="" required>
+        <br>
+
+
+          <a type="button" id="saveReg" class="botao" data-toggle="modal" data-target="#myModal">Salvar</a>
       </div>
 
     </div>
+
+
+
+
+
+
 <script>
 jQuery(function($){
        $(".campoTelefone").mask("(99) 9999-9999");
        $("#CPF").mask("999.999.999-99");
 });
 </script>
+
+<script>
+$('#saveReg').click (function (e) {
+   e.preventDefault(); //will stop the link href to call the blog page
+
+   setTimeout(function () {
+       window.location.href = "perfil.php"; //will redirect to your blog page (an ex: blog.html)
+    }, 4000); //will call the function after 2 secs.
+
+});
+</script>
+
+      <div class="container">
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Aviso</h4>
+            </div>
+            <div class="modal-body">
+              <p class="alert-success">Registro salvo com sucesso!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
+
 
 </html>

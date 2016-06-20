@@ -91,7 +91,7 @@
 	        </div>
 	        <div class="modal-body">
 	          <form class="form-signin">
-			        <h4>E-mail cadastrado: </h2>
+			        <h4>E-mail cadastrado: </h4>
 			        <input type="email" id="inputEmail" class="form-control" required="" autofocus="">  	
 			  </form>
 	          <button type="button" class="btn btn-default left-2" data-dismiss="modal">Cancelar</button>
