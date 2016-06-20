@@ -24,6 +24,7 @@
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/center.js"></script>
   <script src="scripts/jquery.maskedinput.min.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilos/signin.css" />
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
@@ -42,7 +43,7 @@
 		<div class="meio">
 
 				<div class="titulo-detalhes">Apartamento: </div> 
-			    <input class="w3-input inline campoAp" style="width:60px" type="text" name= "apartamento" value="" pattern="[A-Za-z][0-9]{3}">
+			    <input class="w3-input inline campoAp" style="width:60px" type="text" name= "apartamento" value="" pattern="[A-Za-z][0-9]{3}" data-validation="required">
 				<br><br>
 
 			
@@ -132,6 +133,7 @@ jQuery(function($){
        $("#CPF").mask("999.999.999-99");
        $(".campoAp").mask("a999");
 });
+$.validate();
 </script>
 
 </body>
