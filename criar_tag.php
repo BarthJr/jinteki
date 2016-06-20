@@ -25,6 +25,7 @@
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/center.js"></script>
   <script src="scripts/jquery.maskedinput.min.js"></script>
+  <script src="scripts/jquery.validate.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilos/signin.css" />
   <link rel="stylesheet" href="estilos/movimentacao.css" />
   <link rel="stylesheet" href="estilos/detalhes.css" />
@@ -54,7 +55,9 @@
 		<div class="meio">
 
 			<div class="titulo-detalhes">Número da TAG: </div> 
-				<input class="w3-input inline" id="numeroTAG" style="width:110px; text-align:center" type="text" name="nm_tag">
+				<form id="validateMe">
+				<input class="w3-input inline" id="numeroTAG" style="width:110px; text-align:center" type="text" name="nm_tag" data-validation="required" >
+				</form>
 			</select>
 			<br /><br />
 			<div class="titulo-detalhes">Situação: </div> 
@@ -77,7 +80,7 @@
 			<div class="titulo-detalhes">Permissão de acesso: </div>
 				<div class="meio">	
 					<h5>Em que dias da semana a TAG terá permissão de entrar no apartamento?</h5>
-					<form action="">
+					
 						<input type="checkbox" name="diaSemana" value="segunda">Segunda-feira<br>
 						<input type="checkbox" name="diaSemana" value="terca">Terça-feira<br>
 						<input type="checkbox" name="diaSemana" value="quarta">Quarta-feira<br>
@@ -88,23 +91,23 @@
 						<br><br>
 						<div class="col-md-12">
 							<p>A partir de que dia a TAG poderá entrar no apartamento?</p><br />
-							<input type="date" name="inicioPermissao" />
+							<input type="date" name="inicioPermissao" data-validation="date" data-validation-format="dd/mm/yyyy"/>
 						</div>
 
 						<div class="col-md-12">
 							<br><p>Até que dia a TAG poderá entrar no apartamento? </p><br />
-							<input type="date" name="fimPermissao" />
+							<input type="date" name="fimPermissao" data-validation="date" data-validation-format="dd/mm/yyyy"/>
 						</div>
 
 						
 						<div class="col-md-12">
 						<br>	<p>A partir de que horário a TAG poderá entrar no apartamento?</p><br />
-							<input type="time" name="inicioHoraPermissao" />
+							<input type="time" name="inicioHoraPermissao" data-validation="time"/>
 						</div>
 
 						<div class="col-md-12">
 							<br><p>Até que horário a TAG poderá entrar no apartamento? </p><br />
-							<input type="time" name="fimHoraPermissao" />
+							<input type="time" name="fimHoraPermissao" data-validation="time"/>
 						</div>
 					</form>
 					.
@@ -145,9 +148,12 @@
   </div>
   </form>
 <script>
-/*jQuery(function($){
+jQuery(function($){
        $("#numeroTAG").mask("999.999.999");
-}); */
+}); 
 </script>
+<script>
+  $.validate();
+ </script>
 </body>
 </html>
