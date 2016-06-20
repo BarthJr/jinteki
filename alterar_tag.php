@@ -8,7 +8,7 @@
 	require_once $_SERVER['DOCUMENT_ROOT'].'/jinteki/system/system.php';
 	//AcessPrivate();
 	$key= $_GET['userkey'];
-	$data= DBRead("TAG as t, Morador as m, Apartamento as a","WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND t.NumTag = '$key'","t.Estado, a.NomeAp, m.Nome, t.CodPermissao");
+	$data= DBRead("TAG as t, Morador as m, Apartamento as a","WHERE t.CodMorador = m.CodMorador AND m.CodApartamento = a.CodAp AND t.NumTag = '$key' ORDER BY m.Nome","t.Estado, a.NomeAp, m.Nome, t.CodPermissao");
 	$dataAux= $data[0];
 	
 
@@ -119,7 +119,7 @@
 					.
 				</div>
 			<br /><br />
-			<div class="titulo-detalhes">Permissões: </div> 
+			<div class="titulo-detalhes">Nivel de acesso: </div> 
 			<select name="perm" class="inline">
 			  <option value="1"
 			  	<?php if($dataAux['CodPermissao']==1)
